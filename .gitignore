@@ -9,3 +9,4 @@ wheels/
 # Virtual environments
 .venv
 channel_export.json
+hybrid_chat_db/

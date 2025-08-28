@@ -6,6 +6,7 @@ import time
 
 class HybridHinglishChatBot:
     def __init__(self, json_file_path):
+        self.json_file_path = json_file_path
         self.processor = ChatDataProcessor(json_file_path)
         self.hybrid_store = HybridVectorStore()
         self.llm = HybridLLMGenerator()
@@ -13,11 +14,38 @@ class HybridHinglishChatBot:
         self.total_messages = 0
     
     def setup(self):
-        """Complete setup with hybrid retrieval system"""
+        """Smart setup - only process if not already done"""
         print("🚀 Setting up HYBRID Hinglish Discord Chat Bot...")
         print("🎯 Using RRF + BM25 + Dense Embeddings for maximum accuracy!")
         print("=" * 70)
         
+        # CHECK IF ALREADY SETUP
+        if self.hybrid_store.is_setup_complete():
+            print("🎉 EXISTING SETUP FOUND!")
+            print("📂 Loading pre-built indices...")
+            
+            # Load existing BM25 index
+            if self.hybrid_store.load_existing_indices():
+                vector_count = self.hybrid_store.collection.count()
+                bm25_count = len(self.hybrid_store.documents)
+                
+                print(f"✅ Loaded existing hybrid system:")
+                print(f"📊 Vector store: {vector_count} chunks")
+                print(f"📊 BM25 index: {bm25_count} documents")
+                
+                self.setup_complete = True
+                self.total_messages = bm25_count * 5  # Estimate
+                
+                print("\n" + "=" * 70)
+                print("🎉 Bot ready from existing data - NO REPROCESSING NEEDED!")
+                print(f"{self.hybrid_store.get_stats()}")
+                print("🔍 Retrieval: RRF + BM25 + LaBSE Embeddings")
+                print("🧠 LLM: Llama 3.1 8B (Local)")
+                print("=" * 70)
+                return True
+        
+        # IF NOT SETUP, DO FULL PROCESSING
+        print("🔧 No existing setup found - processing data...")
         start_time = time.time()
         
         # Process Discord data
@@ -28,7 +56,7 @@ class HybridHinglishChatBot:
             print("❌ No messages found!")
             return False
         
-        # Create optimized chunks
+        # Create chunks
         chunks = self.processor.chunk_messages(messages)
         
         if not chunks:
@@ -39,7 +67,7 @@ class HybridHinglishChatBot:
         del messages
         gc.collect()
         
-        # Build hybrid indices
+        # Build hybrid indices (first time)
         self.hybrid_store.add_chunks(chunks)
         
         # Free memory
@@ -98,15 +126,15 @@ class HybridHinglishChatBot:
         
         return f"🤖 **AI Response (Hybrid Retrieval):**\n\n{response}{performance_note}"
     
-    def get_summary(self, method="hybrid"):
-        """Get conversation summary using hybrid retrieval"""
+    def get_summary(self):
+        """Get conversation summary"""
         if not self.setup_complete:
             return "❌ Setup incomplete!"
         
         # Get diverse sample using hybrid search
         sample_queries = [
             "programming discussion coding",
-            "server community members",
+            "server community members", 
             "job work career discussion",
             "competitive programming contest"
         ]
@@ -117,49 +145,43 @@ class HybridHinglishChatBot:
             if results and results['documents']:
                 all_chunks.extend(results['documents'][0])
         
-        # Remove duplicates and limit
+        # Remove duplicates
         unique_chunks = list(set(all_chunks))[:8]
         
         if not unique_chunks:
             return "🤔 No conversations available for summary"
         
-        # Generate summary
-        print("📝 Generating hybrid retrieval summary...")
+        print("📝 Generating summary...")
         summary = self.llm.summarize_conversations(unique_chunks, "hybrid (RRF+BM25+Embeddings)")
         
         return f"📋 **Community Summary (Hybrid Analysis):**\n\n{summary}"
     
-    def compare_search_methods(self, question):
-        """Compare different search methods"""
-        if not self.setup_complete:
-            return "❌ Setup incomplete!"
+    def reset_setup(self):
+        """Force reset - delete all indices to reprocess"""
+        import os
+        import shutil
         
-        print(f"🔬 Comparing search methods for: '{question}'")
+        files_to_remove = [
+            "./setup_complete.flag",
+            "./bm25_index.pkl",
+            "./hybrid_chat_db"
+        ]
         
-        # Hybrid search
-        hybrid_results = self.hybrid_store.hybrid_search(question, n_results=3)
+        for path in files_to_remove:
+            try:
+                if os.path.exists(path):
+                    if os.path.isdir(path):
+                        shutil.rmtree(path)
+                    else:
+                        os.remove(path)
+                    print(f"🗑️  Removed: {path}")
+            except Exception as e:
+                print(f"❌ Error removing {path}: {e}")
         
-        # Vector-only search (through ChromaDB directly)
-        vector_results = self.hybrid_store.collection.query(
-            query_embeddings=[self.hybrid_store.embedding_model.encode([question]).tolist()[0]],
-            n_results=3,
-            include=['documents', 'metadatas', 'distances']
-        )
-        
-        comparison = f"""🔍 **Search Method Comparison:**
-
-**Hybrid (RRF + BM25 + Embeddings):**
-{len(hybrid_results['documents'][0]) if hybrid_results else 0} results found
-
-**Vector Only:**  
-{len(vector_results['documents'][0]) if vector_results else 0} results found
-
-**Recommendation:** Hybrid search typically gives better results for mixed queries."""
-        
-        return comparison
+        print("✅ Setup reset complete - next run will reprocess data")
     
     def get_stats(self):
-        """Comprehensive bot statistics"""
+        """Get bot statistics"""
         if not self.setup_complete:
             return "❌ Bot not ready"
         
@@ -180,53 +202,30 @@ class HybridHinglishChatBot:
    • Context: Up to 4 conversation chunks
    • Style: Natural Hinglish responses
 
-🎯 **Optimizations:**
-   • Perfect for: "bhai kya discuss hua tha" queries
-   • Handles: Exact keywords + semantic similarity
-   • Performance: Sub-second search + generation"""
+🎯 **Performance:**
+   • ✅ Persistent storage - no reprocessing needed
+   • ✅ Sub-second search + generation
+   • ✅ Perfect for mixed Hindi-English queries"""
 
 # Main execution
 if __name__ == "__main__":
     # Initialize hybrid bot
     bot = HybridHinglishChatBot("channel_export.json")
     
-    # Setup
-    print("Starting HYBRID setup - this combines the best of all worlds...")
+    # Smart setup - will skip if already done
+    print("Checking for existing setup...")
     if not bot.setup():
         print("❌ Setup failed!")
         exit()
     
-    # Show comprehensive stats
+    # Show stats
     print(f"\n{bot.get_stats()}")
-    
-    # Test with challenging Hinglish queries
-    test_questions = [
-        "bhai competitive programming ke baare mein kya discuss hua tha?",
-        "CMC server mein kaun sabse active member hai?", 
-        "job aur career ke baare mein koi baat hui thi?",
-        "programming contest ya coding competition ki baat hui?",
-        "server ke rules ya moderation ke baare mein kya hua?",
-        "koi funny ya interesting conversation hui thi?"
-    ]
-    
-    print("\n" + "="*70)
-    print("🧪 Testing HYBRID AI responses with challenging Hinglish queries...")
-    print("="*70)
-    
-    for q in test_questions:
-        print(f"\n❓ **Test Question:** {q}")
-        response = bot.ask_question(q)
-        print(response)
-        print("-" * 50)
-    
-    # Get comprehensive summary
-    print(f"\n{bot.get_summary()}")
     
     # Interactive mode
     print("\n" + "="*70)
     print("💬 HYBRID Interactive Mode!")
     print("🎯 Ask anything in Hindi/English/Hinglish mix")
-    print("🔧 Commands: 'summary', 'stats', 'compare [question]', 'quit'")
+    print("🔧 Commands: 'summary', 'stats', 'reset' (force reprocess), 'quit'")
     print("="*70)
     
     while True:
@@ -235,9 +234,9 @@ if __name__ == "__main__":
         if user_input.lower() in ['quit', 'exit', 'bye']:
             print("👋 Bye bhai! Hybrid chat bot shutting down...")
             break
-        elif user_input.lower().startswith('compare '):
-            question = user_input[8:].strip()
-            response = bot.compare_search_methods(question)
+        elif user_input.lower() == 'reset':
+            bot.reset_setup()
+            print("🔄 Restart the bot to reprocess data from scratch")
         elif user_input.lower() in ['summary', 'summarize']:
             response = bot.get_summary()
         elif user_input.lower() in ['stats', 'statistics']:

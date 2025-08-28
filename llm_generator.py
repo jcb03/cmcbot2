@@ -59,7 +59,7 @@ Response:"""
                 model=self.model_name,
                 messages=[{'role': 'user', 'content': prompt}],
                 options={
-                    'temperature': 0.6,  # Slightly more creative for conversational tone
+                    'temperature': 0.5,  # Slightly more creative for conversational tone
                     'max_tokens': 350,
                     'top_p': 0.9
                 }
@@ -103,7 +103,7 @@ Write in natural Hinglish style, keep it engaging and under 200 words:"""
                 model=self.model_name,
                 messages=[{'role': 'user', 'content': prompt}],
                 options={
-                    'temperature': 0.5,
+                    'temperature': 0.4,
                     'max_tokens': 300
                 }
             )
