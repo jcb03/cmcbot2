@@ -1,0 +1,6 @@
+sentence-transformers 
+chromadb 
+ollama 
+pandas 
+numpy 
+rank-bm25
