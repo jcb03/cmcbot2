@@ -4,3 +4,5 @@ ollama
 pandas 
 numpy 
 rank-bm25
+openai 
+python-dotenv

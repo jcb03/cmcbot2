@@ -9,4 +9,6 @@ wheels/
 # Virtual environments
 .venv
 channel_export.json
-hybrid_chat_db/
+openai_hybrid_chat_db/
+bm25_index.pkl
+.env

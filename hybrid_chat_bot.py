@@ -3,52 +3,70 @@ from hybrid_vector_store import HybridVectorStore
 from llm_generator import HybridLLMGenerator
 import gc
 import time
+import os
+from pathlib import Path
 
-class HybridHinglishChatBot:
+# Load environment variables
+def load_env():
+    env_path = Path('.') / '.env'
+    if env_path.exists():
+        with open(env_path) as f:
+            for line in f:
+                if line.strip() and not line.startswith('#'):
+                    if '=' in line:
+                        key, val = line.strip().split('=', 1)
+                        os.environ[key.strip()] = val.strip().strip('"\'')
+
+class SimpleHinglishChatBot:
     def __init__(self, json_file_path):
+        load_env()
+        
         self.json_file_path = json_file_path
         self.processor = ChatDataProcessor(json_file_path)
         self.hybrid_store = HybridVectorStore()
         self.llm = HybridLLMGenerator()
         self.setup_complete = False
         self.total_messages = 0
+        
+        # Check OpenAI key
+        if not os.getenv("OPENAI_API_KEY"):
+            raise ValueError("❌ OPENAI_API_KEY required! Add it to .env file.")
+        
+        print("✅ OpenAI API key detected - using simple hybrid retrieval!")
     
     def setup(self):
-        """Smart setup - only process if not already done"""
-        print("🚀 Setting up HYBRID Hinglish Discord Chat Bot...")
-        print("🎯 Using RRF + BM25 + Dense Embeddings for maximum accuracy!")
-        print("=" * 70)
+        """Simple setup - no BS"""
+        print("🚀 Setting up SIMPLE Hinglish Discord Chat Bot...")
+        print("🎯 RRF + BM25 + OpenAI Embeddings ONLY!")
+        print("=" * 60)
         
-        # CHECK IF ALREADY SETUP
+        # Check existing setup
         if self.hybrid_store.is_setup_complete():
             print("🎉 EXISTING SETUP FOUND!")
-            print("📂 Loading pre-built indices...")
             
-            # Load existing BM25 index
             if self.hybrid_store.load_existing_indices():
                 vector_count = self.hybrid_store.collection.count()
                 bm25_count = len(self.hybrid_store.documents)
                 
-                print(f"✅ Loaded existing hybrid system:")
+                print(f"✅ Loaded existing system:")
                 print(f"📊 Vector store: {vector_count} chunks")
                 print(f"📊 BM25 index: {bm25_count} documents")
                 
                 self.setup_complete = True
-                self.total_messages = bm25_count * 5  # Estimate
+                self.total_messages = bm25_count * 6
                 
-                print("\n" + "=" * 70)
-                print("🎉 Bot ready from existing data - NO REPROCESSING NEEDED!")
+                print("\n" + "=" * 60)
+                print("🎉 Bot ready - NO REPROCESSING!")
                 print(f"{self.hybrid_store.get_stats()}")
-                print("🔍 Retrieval: RRF + BM25 + LaBSE Embeddings")
-                print("🧠 LLM: Llama 3.1 8B (Local)")
-                print("=" * 70)
+                print("🔍 Retrieval: SIMPLE RRF + BM25 + OpenAI")
+                print("🧠 LLM: Llama 3.1 8B")
+                print("=" * 60)
                 return True
         
-        # IF NOT SETUP, DO FULL PROCESSING
-        print("🔧 No existing setup found - processing data...")
+        # Process data
+        print("🔧 Processing data with SIMPLE pipeline...")
         start_time = time.time()
         
-        # Process Discord data
         messages = self.processor.load_and_clean_data()
         self.total_messages = len(messages)
         
@@ -56,164 +74,97 @@ class HybridHinglishChatBot:
             print("❌ No messages found!")
             return False
         
-        # Create chunks
-        chunks = self.processor.chunk_messages(messages)
+        chunks = self.processor.chunk_messages(messages, chunk_size=8)
         
         if not chunks:
             print("❌ No chunks created!")
             return False
         
-        # Free memory
         del messages
         gc.collect()
         
-        # Build hybrid indices (first time)
-        self.hybrid_store.add_chunks(chunks)
+        # Build hybrid system
+        self.hybrid_store.add_chunks(chunks, batch_size=400)
         
-        # Free memory
         del chunks
         gc.collect()
         
         setup_time = time.time() - start_time
-        
         self.setup_complete = True
-        print("\n" + "=" * 70)
-        print("🎉 HYBRID Chat Bot setup complete!")
+        
+        print("\n" + "=" * 60)
+        print("🎉 SIMPLE Chat Bot setup complete!")
         print(f"⏱️  Setup time: {setup_time:.1f} seconds")
         print(f"📊 Processed: {self.total_messages:,} messages")
         print(f"{self.hybrid_store.get_stats()}")
-        print("🔍 Retrieval: RRF + BM25 + LaBSE Embeddings")
-        print("🧠 LLM: Llama 3.1 8B (Local)")
-        print("💬 Optimized for: Hinglish queries like 'bhai kya discuss hua tha'")
-        print("=" * 70)
+        print("🔍 Retrieval: SIMPLE RRF + BM25 + OpenAI")
+        print("🧠 LLM: Llama 3.1 8B")
+        print("=" * 60)
         return True
     
-    def ask_question(self, question, search_mode="hybrid"):
-        """Ask question with hybrid retrieval"""
+    def ask_question(self, question):
+        """SIMPLE: Just ask and get answer - NO FILTERING BULLSH*T"""
         if not self.setup_complete:
             return "❌ Setup incomplete! Run setup() first."
         
         print(f"🤔 Processing: '{question}'")
         
-        # Perform hybrid search
+        # Simple hybrid search
         start_search = time.time()
         results = self.hybrid_store.hybrid_search(question, n_results=4)
         search_time = time.time() - start_search
         
         if not results or not results['documents'] or not results['documents'][0]:
-            return "🤔 Koi relevant conversation nahi mila bhai! Try different keywords."
+            return "🤔 Koi conversation nahi mila bhai! Try different keywords."
         
-        # Extract results
+        # Extract results - NO FILTERING
         conversation_chunks = results['documents'][0]
         chunk_metadata = results['metadatas'][0]
+        distances = results['distances'][0]
         
-        # Generate intelligent response
+        # Generate response - NO BS FILTERING
         print("🧠 Generating AI response...")
         start_llm = time.time()
         
-        retrieval_info = f"Vector+BM25+RRF, {len(conversation_chunks)} chunks, {search_time:.2f}s search"
         response = self.llm.generate_response(
             question, 
             conversation_chunks, 
-            chunk_metadata,
-            retrieval_info
+            chunk_metadata
         )
         
         llm_time = time.time() - start_llm
         
-        # Add performance stats
+        # Simple performance note
         performance_note = f"\n\n⚡ *Search: {search_time:.2f}s | Generation: {llm_time:.2f}s*"
         
-        return f"🤖 **AI Response (Hybrid Retrieval):**\n\n{response}{performance_note}"
-    
-    def get_summary(self):
-        """Get conversation summary"""
-        if not self.setup_complete:
-            return "❌ Setup incomplete!"
-        
-        # Get diverse sample using hybrid search
-        sample_queries = [
-            "programming discussion coding",
-            "server community members", 
-            "job work career discussion",
-            "competitive programming contest"
-        ]
-        
-        all_chunks = []
-        for query in sample_queries:
-            results = self.hybrid_store.hybrid_search(query, n_results=2)
-            if results and results['documents']:
-                all_chunks.extend(results['documents'][0])
-        
-        # Remove duplicates
-        unique_chunks = list(set(all_chunks))[:8]
-        
-        if not unique_chunks:
-            return "🤔 No conversations available for summary"
-        
-        print("📝 Generating summary...")
-        summary = self.llm.summarize_conversations(unique_chunks, "hybrid (RRF+BM25+Embeddings)")
-        
-        return f"📋 **Community Summary (Hybrid Analysis):**\n\n{summary}"
-    
-    def reset_setup(self):
-        """Force reset - delete all indices to reprocess"""
-        import os
-        import shutil
-        
-        files_to_remove = [
-            "./setup_complete.flag",
-            "./bm25_index.pkl",
-            "./hybrid_chat_db"
-        ]
-        
-        for path in files_to_remove:
-            try:
-                if os.path.exists(path):
-                    if os.path.isdir(path):
-                        shutil.rmtree(path)
-                    else:
-                        os.remove(path)
-                    print(f"🗑️  Removed: {path}")
-            except Exception as e:
-                print(f"❌ Error removing {path}: {e}")
-        
-        print("✅ Setup reset complete - next run will reprocess data")
+        return f"🤖 **AI Response:**\n\n{response}{performance_note}"
     
     def get_stats(self):
-        """Get bot statistics"""
+        """Simple stats"""
         if not self.setup_complete:
             return "❌ Bot not ready"
         
-        return f"""📊 **Hybrid Hinglish Chat Bot Stats:**
+        return f"""📊 **SIMPLE Hinglish Chat Bot Stats:**
 
-🔢 **Data:**
-   • Messages processed: {self.total_messages:,}
-   • {self.hybrid_store.get_stats()}
+🔢 **Data:** {self.total_messages:,} messages processed
+📊 **Storage:** {self.hybrid_store.get_stats()}
 
-🔍 **Retrieval System:**
-   • Method: RRF + BM25 + Dense Embeddings
-   • Embedding Model: LaBSE (Multilingual)
-   • Keyword Search: BM25 with Hinglish tokenization
-   • Fusion: Reciprocal Rank Fusion (RRF)
+🔍 **Retrieval:** RRF + BM25 + OpenAI Embeddings ONLY
+🧠 **LLM:** Llama 3.1 8B (Local)
 
-🧠 **Generation:**
-   • LLM: Llama 3.1 8B (Local)
-   • Context: Up to 4 conversation chunks
-   • Style: Natural Hinglish responses
-
-🎯 **Performance:**
-   • ✅ Persistent storage - no reprocessing needed
-   • ✅ Sub-second search + generation
-   • ✅ Perfect for mixed Hindi-English queries"""
+🎯 **Features:**
+   • ✅ No filtering bullsh*t - returns all results
+   • ✅ No context expansion - just raw chunks  
+   • ✅ Simple RRF fusion (50% vector, 50% BM25)
+   • ✅ OpenAI embeddings for accuracy
+   • ✅ Perfect for Hinglish queries"""
 
 # Main execution
 if __name__ == "__main__":
-    # Initialize hybrid bot
-    bot = HybridHinglishChatBot("channel_export.json")
+    # Initialize simple bot
+    bot = SimpleHinglishChatBot("channel_export.json")
     
-    # Smart setup - will skip if already done
-    print("Checking for existing setup...")
+    # Setup
     if not bot.setup():
         print("❌ Setup failed!")
         exit()
@@ -221,27 +172,42 @@ if __name__ == "__main__":
     # Show stats
     print(f"\n{bot.get_stats()}")
     
+    # Test questions
+    test_questions = [
+        "theabbie kon hai?",
+        "bhai competitive programming ke baare mein kya discuss hua?",
+        "CMC server mein kaun active hai?",
+        "priyansh ke baare mein kya baat hui?",
+        "job aur career advice?"
+    ]
+    
+    print("\n" + "="*60)
+    print("🧪 Testing SIMPLE hybrid responses...")
+    print("="*60)
+    
+    for q in test_questions:
+        print(f"\n❓ **Question:** {q}")
+        response = bot.ask_question(q)
+        print(response)
+        print("-" * 40)
+    
     # Interactive mode
-    print("\n" + "="*70)
-    print("💬 HYBRID Interactive Mode!")
-    print("🎯 Ask anything in Hindi/English/Hinglish mix")
-    print("🔧 Commands: 'summary', 'stats', 'reset' (force reprocess), 'quit'")
-    print("="*70)
+    print("\n" + "="*60)
+    print("💬 SIMPLE Interactive Mode!")
+    print("Commands: 'stats', 'reset', 'quit'")
+    print("="*60)
     
     while True:
         user_input = input("\n🗣️  You: ").strip()
         
         if user_input.lower() in ['quit', 'exit', 'bye']:
-            print("👋 Bye bhai! Hybrid chat bot shutting down...")
+            print("👋 Bye! Simple chat bot shutting down...")
             break
         elif user_input.lower() == 'reset':
-            bot.reset_setup()
-            print("🔄 Restart the bot to reprocess data from scratch")
-        elif user_input.lower() in ['summary', 'summarize']:
-            response = bot.get_summary()
-        elif user_input.lower() in ['stats', 'statistics']:
-            response = bot.get_stats()
+            bot.hybrid_store.force_reset()
+            print("🔄 Restart bot to reprocess data")
+        elif user_input.lower() == 'stats':
+            print(bot.get_stats())
         else:
             response = bot.ask_question(user_input)
-        
-        print(f"\n{response}")
+            print(f"\n{response}")
