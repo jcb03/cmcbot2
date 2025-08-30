@@ -393,7 +393,6 @@ class HybridVectorStore:
         
             vector_selected = 0
             bm25_selected = 0
-            hybrid_selected = 0
         
             for rank, (doc_idx, score) in enumerate(final_ranking[:n_results]):
                 if doc_idx < len(self.documents):
@@ -405,10 +404,8 @@ class HybridVectorStore:
                     in_vector_top = doc_idx in vector_top_ids
                     in_bm25_top = doc_idx in bm25_top_ids
                 
-                    if in_vector_top and in_bm25_top:
-                        source_type = "HYBRID (Vector + BM25)"
-                        hybrid_selected += 1
-                    elif in_vector_top and not in_bm25_top:
+                    
+                    if in_vector_top and not in_bm25_top:
                         source_type = "VECTOR ONLY"
                         vector_selected += 1
                     elif in_bm25_top and not in_vector_top:
@@ -425,11 +422,10 @@ class HybridVectorStore:
                     log_lines.append(f"Users: '{users}'")
                     log_lines.append(f"Content: {clean_text}...")
         
-            # FIXED: Accurate summary statistics
+            # Accurate summary statistics
             log_lines.append(f"\n📊 SELECTION STATISTICS:")
             log_lines.append(f"Vector Only: {vector_selected}/{n_results} ({vector_selected/n_results*100:.1f}%)")
             log_lines.append(f"BM25 Only: {bm25_selected}/{n_results} ({bm25_selected/n_results*100:.1f}%)")
-            log_lines.append(f"Hybrid (Both): {hybrid_selected}/{n_results} ({hybrid_selected/n_results*100:.1f}%)")
             log_lines.append("=" * 80)
             log_lines.append("")
         

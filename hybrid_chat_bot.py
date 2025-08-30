@@ -137,7 +137,7 @@ class SimpleHinglishChatBot:
         # Simple performance note
         performance_note = f"\n\n⚡ *Search: {search_time:.2f}s | Generation: {llm_time:.2f}s*"
         
-        return f"{response}{performance_note}"
+        return f"{response}"
     
     def get_stats(self):
         """Simple stats"""

@@ -1427,3 +1427,1897 @@ Traceback (most recent call last):
   File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
     raise RuntimeError("Session is closed")
 RuntimeError: Session is closed
+2025-08-31 02:31:25,825 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:31:25,987 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:31:27,603 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:31:31,113 - PyNaCl is not installed, voice will NOT be supported
+2025-08-31 02:31:31,113 - logging in using static token
+2025-08-31 02:31:32,821 - Shard ID None has connected to Gateway (Session ID: 4625ff2a2e3fd4d2c0c4c258da55dcf3).
+2025-08-31 02:32:24,946 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:32:26,350 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:32:26,775 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:32:29,953 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:34:13,826 - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "E:\cmcbot2\discord_bot.py", line 82, in process_message_queue
+    await channel.send(response)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "E:\cmcbot2\discord_bot.py", line 60, in on_message
+    await self.process_message_queue()
+  File "E:\cmcbot2\discord_bot.py", line 86, in process_message_queue
+    await channel.send(error_msg)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+2025-08-31 02:34:38,959 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:34:39,109 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:34:40,025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:34:43,583 - PyNaCl is not installed, voice will NOT be supported
+2025-08-31 02:34:43,583 - logging in using static token
+2025-08-31 02:34:45,325 - Shard ID None has connected to Gateway (Session ID: e35461aa03e1425804fe578a8d2e9a34).
+2025-08-31 02:34:57,279 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:34:58,763 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:34:59,262 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:35:02,019 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:36:53,867 - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "E:\cmcbot2\discord_bot.py", line 82, in process_message_queue
+    await channel.send(response)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "E:\cmcbot2\discord_bot.py", line 60, in on_message
+    await self.process_message_queue()
+  File "E:\cmcbot2\discord_bot.py", line 86, in process_message_queue
+    await channel.send(error_msg)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+2025-08-31 02:39:42,121 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:39:42,261 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:39:42,804 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:39:46,356 - PyNaCl is not installed, voice will NOT be supported
+2025-08-31 02:39:46,356 - logging in using static token
+2025-08-31 02:39:48,415 - Shard ID None has connected to Gateway (Session ID: 7543a6dd7e7af401612ef9cc4864f841).
+2025-08-31 02:40:10,818 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:40:12,270 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:40:12,705 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3806, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:40:15,295 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:40:27,534 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:40:27,943 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:40:30,366 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:40:35,311 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:40:35,723 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:40:37,556 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:42:00,858 - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "E:\cmcbot2\discord_bot.py", line 88, in process_message_queue
+    await channel.send(response)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "E:\cmcbot2\discord_bot.py", line 66, in on_message
+    await self.process_message_queue()
+  File "E:\cmcbot2\discord_bot.py", line 92, in process_message_queue
+    await channel.send(error_msg)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+2025-08-31 02:43:32,975 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:43:33,121 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:43:34,109 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:43:37,635 - PyNaCl is not installed, voice will NOT be supported
+2025-08-31 02:43:37,635 - logging in using static token
+2025-08-31 02:43:39,568 - Shard ID None has connected to Gateway (Session ID: fe2c44143f1aba81fab7ae5f7d7a144b).
+2025-08-31 02:43:53,040 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:43:54,598 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:43:55,102 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:43:57,467 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:45:38,071 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:45:38,520 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:45:41,037 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:45:49,629 - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "E:\cmcbot2\discord_bot.py", line 106, in process_message_queue
+    await channel.send(response)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "E:\cmcbot2\discord_bot.py", line 84, in on_message
+    await self.process_message_queue()
+  File "E:\cmcbot2\discord_bot.py", line 110, in process_message_queue
+    await channel.send(error_msg)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+2025-08-31 02:48:02,217 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:48:02,378 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:48:03,487 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:48:07,054 - PyNaCl is not installed, voice will NOT be supported
+2025-08-31 02:48:07,055 - logging in using static token
+2025-08-31 02:48:08,817 - Shard ID None has connected to Gateway (Session ID: 644fd629e625c39a231705a98d57808c).
+2025-08-31 02:48:35,339 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:48:36,907 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:48:37,359 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:48:40,063 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:49:18,455 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:49:19,070 - ================================================================================
+HYBRID SEARCH LOG - Query: 'what college is mesosan aka meso from'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=336062, Distance=0.4086, Users='mesosan, monarch'
+Content: mesosan: Crazy product mesosan: https://viralfeed.ai/ mesosan: is bro burning money hosting i2vxl mesosan: oh he's using kling mesosan: still must be ...
+
+Vector #2: DocID=329610, Distance=0.4246, Users='mesosan, flakes, Abbie'
+Content: mesosan: coordinate yourself flakes: does meso have enough reach for app to blow up mesosan: oh ofc I can inform Abbie: do bgv of everyone who has pas...
+
+Vector #3: DocID=327619, Distance=0.4259, Users='mesosan, popsicles, Abbie'
+Content: mesosan: not worth it mesosan: not that big of a diff if you see the conditions of bonus and shit popsicles: meso check dm mesosan: long probation and...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=39575, Users='Avinash yadav bengalan rizzler, noobie9272, Abbie, Similie'
+Content: Avinash yadav bengalan rizzler: krdo nah abbie will give u 🦎 Abbie: Meso block kyu hota samajh gaya Similie: Mata agrasen institute of technology? Abb...
+
+BM25 #2: DocID=135997, Users='cyfur, Avinash yadav bengalan rizzler, Abbie'
+Content: cyfur: Are bc cyfur: Iitkgp me hota wo Avinash yadav bengalan rizzler: I believe in gangwanism aka hatred towards meso cyfur: Mera dost cyfur: Story d...
+
+BM25 #3: DocID=328945, Users='mesosan, flakes, felish'
+Content: mesosan: to an order mesosan: so an order can be complted by 4 people pleding 50 each mesosan: should be there mesosan: yes, it will show all people t...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=39575, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'Avinash yadav bengalan rizzler, noobie9272, Abbie, Similie'
+Content: Avinash yadav bengalan rizzler: krdo nah abbie will give u 🦎 Abbie: Meso block kyu hota samajh gaya Similie: Mata agrasen institute of technology? Abbie: Mary Angel Institute of technology noobie9272:...
+
+Rank #2: DocID=135997, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'cyfur, Avinash yadav bengalan rizzler, Abbie'
+Content: cyfur: Are bc cyfur: Iitkgp me hota wo Avinash yadav bengalan rizzler: I believe in gangwanism aka hatred towards meso cyfur: Mera dost cyfur: Story daal rha tha cyfur: Which iit sar@mesosan Abbie: Ka...
+
+Rank #3: DocID=328945, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'mesosan, flakes, felish'
+Content: mesosan: to an order mesosan: so an order can be complted by 4 people pleding 50 each mesosan: should be there mesosan: yes, it will show all people that participated aka peldged flakes: sir spelling ...
+
+Rank #4: DocID=329998, Score=0.007812
+Selected by: UNKNOWN
+Users: 'mesosan, nmnsharma007, Abbie, mooli'
+Content: mesosan: I can only tell what I read in College Abbie: if made compiler as project it would be possible atleast mesosan: I am thorough with whatever i read in college mesosan: I made an interpreter nm...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:49:21,225 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:51:23,495 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:51:23,782 - ================================================================================
+HYBRID SEARCH LOG - Query: 'xeno kon hai'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=6995, Distance=0.5945, Users='malevolent dictator, Xero, Utkarsh, KingRayuga'
+Content: KingRayuga: Kk it is Xero: demo ofc :kekw: Xero: oh right Utkarsh: let us try it malevolent dictator: I think there are only a few candidates KingRayu...
+
+Vector #2: DocID=8565, Distance=0.5982, Users='malevolent dictator, Dhaval Ahir, Xero, Abbie'
+Content: Xero: lucky you :noo: malevolent dictator: lets hope mercari is exception Abbie: discipline bohot hai udar, 2 metre ka road cross karne ke liye bhi si...
+
+Vector #3: DocID=8563, Distance=0.6019, Users='malevolent dictator, Dhaval Ahir, Xero, Abbie'
+Content: malevolent dictator: abhi july ke sath intern khatam ho jaegi Xero: tokyo me anime waifus dikhne ko miljayega :noo: Dhaval Ahir: Sir Discord ke Active...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=188093, Users='Madao, Sarvesh Khodwe, formerly Prasham, flacko'
+Content: flacko: dmc 5 khela tha seedha lund smjh nhi aaya kya chal rha h story Madao: dragon ball xeno Madao: khela tha me Sarvesh Khodwe, formerly Prasham: d...
+
+BM25 #2: DocID=188092, Users='Madao, Sarvesh Khodwe, formerly Prasham, flacko'
+Content: flacko: mene 20% kuch kri thi iski story complete Sarvesh Khodwe, formerly Prasham: dmc 4 still peak dmc game Sarvesh Khodwe, formerly Prasham: graphi...
+
+BM25 #3: DocID=311301, Users='Dipstick, jashan, popsicles, Gulab Jamun (sada hua  )'
+Content: jashan: ayaan mandal ko toh jaante hi hoge jashan: abhi itna bura nahi hua Dipstick: abhi rabies hua tha inhe Dipstick: bhaiya ghar gye the popsicles:...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=188093, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'Madao, Sarvesh Khodwe, formerly Prasham, flacko'
+Content: flacko: dmc 5 khela tha seedha lund smjh nhi aaya kya chal rha h story Madao: dragon ball xeno Madao: khela tha me Sarvesh Khodwe, formerly Prasham: do you skip cinematics Madao: par no interest Madao...
+
+Rank #2: DocID=188092, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Madao, Sarvesh Khodwe, formerly Prasham, flacko'
+Content: flacko: mene 20% kuch kri thi iski story complete Sarvesh Khodwe, formerly Prasham: dmc 4 still peak dmc game Sarvesh Khodwe, formerly Prasham: graphics still on par Sarvesh Khodwe, formerly Prasham: ...
+
+Rank #3: DocID=311301, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'Dipstick, jashan, popsicles, Gulab Jamun (sada hua  )'
+Content: jashan: ayaan mandal ko toh jaante hi hoge jashan: abhi itna bura nahi hua Dipstick: abhi rabies hua tha inhe Dipstick: bhaiya ghar gye the popsicles: class mein nhi janta ke kon kon hai Gulab Jamun (...
+
+Rank #4: DocID=311302, Score=0.007812
+Selected by: UNKNOWN
+Users: 'jashan, Dipstick, popsicles, Gulab Jamun (sada hua  )'
+Content: popsicles: class mein nhi janta ke kon kon hai Gulab Jamun (sada hua  ): Yeh toh mai bhi nahi jaanta par log mujhe jaante hai jashan: ye toh mai shi me nahi janta ki kon kon hai jashan: class me jasha...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:51:25,337 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:56:32,384 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:56:32,831 - ================================================================================
+HYBRID SEARCH LOG - Query: 'puch ai ka kya scene h?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=229275, Distance=0.5107, Users='ALESTA, Abbie'
+Content: Abbie: gfg rating kab dikhega Abbie: https://www.linkedin.com/posts/tarun-kumar-7489651a0_hiring-backend-sharechat-activity-7194758552614313984-8tGC?u...
+
+Vector #2: DocID=30140, Distance=0.5341, Users='Avinash yadav bengalan rizzler, Abbie'
+Content: Abbie: Kitni pitai sahi hai Abbie: Majdoori ki Avinash yadav bengalan rizzler: pehle hi released hai bihari pe movies Avinash yadav bengalan rizzler: ...
+
+Vector #3: DocID=30138, Distance=0.5353, Users='Avinash yadav bengalan rizzler, Abbie'
+Content: Abbie: Bonfire kar sakte bas wohi hai Avinash yadav bengalan rizzler: experienced kashmir ki thand tabse sab thand india mai feeki lagti Abbie: Aap bh...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=335898, Users='Avinash yadav bengalan rizzler, flakes, Shinomori, Abbie'
+Content: flakes: ppo reject bhi out of control hote sometimes :sadge: Avinash yadav bengalan rizzler: Puch ai vs unify apps flakes: future of Indian startup sc...
+
+BM25 #2: DocID=335897, Users='Avinash yadav bengalan rizzler, flakes, Abbie'
+Content: flakes: puch ai cto Abbie: yes pappu intern flakes: what if he doesn't get ppo Abbie: that's his fault then can't blame recession flakes: ppo reject b...
+
+BM25 #3: DocID=342528, Users='ThoughtCrime, Prince RaGa, Shinomori, Avinash yadav bengalan rizzler'
+Content: ThoughtCrime: I didnt like my previous job. This I am liking so far. Prince RaGa: noida wali ka naam kya tha, i forgot Avinash yadav bengalan rizzler:...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=335898, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'Avinash yadav bengalan rizzler, flakes, Shinomori, Abbie'
+Content: flakes: ppo reject bhi out of control hote sometimes :sadge: Avinash yadav bengalan rizzler: Puch ai vs unify apps flakes: future of Indian startup scene Abbie: unify apps has ai too so easy win flake...
+
+Rank #2: DocID=335897, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Avinash yadav bengalan rizzler, flakes, Abbie'
+Content: flakes: puch ai cto Abbie: yes pappu intern flakes: what if he doesn't get ppo Abbie: that's his fault then can't blame recession flakes: ppo reject bhi out of control hote sometimes :sadge: Avinash y...
+
+Rank #3: DocID=342528, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'ThoughtCrime, Prince RaGa, Shinomori, Avinash yadav bengalan rizzler'
+Content: ThoughtCrime: I didnt like my previous job. This I am liking so far. Prince RaGa: noida wali ka naam kya tha, i forgot Avinash yadav bengalan rizzler: Puch ai mai dilwade ThoughtCrime: Interra systems...
+
+Rank #4: DocID=326470, Score=0.007812
+Selected by: UNKNOWN
+Users: 'jashan, Random Anon, Abbie'
+Content: jashan: solve selected Random Anon: Bhai teri crush kaa kya scene haii Abbie: lund lega kya Abbie: free mein jashan: koi scene nahi hai Random Anon: Aaj tereko tips dete hai Random Anon: Apne doubt pu...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:56:35,871 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:56:40,906 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:56:41,178 - ================================================================================
+HYBRID SEARCH LOG - Query: 'qbit kon hai'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=325810, Distance=0.5077, Users='Blessed, Avinash yadav bengalan rizzler, jashan, Abbie, mesosan, quester'
+Content: quester: qualcomm me he dost Blessed: are u from cu? Avinash yadav bengalan rizzler: @Dhaval Ahir quester: cu wala hi chahiye Abbie: Dhaval uses Gojjo...
+
+Vector #2: DocID=349039, Distance=0.5372, Users='yb38, quester, mooli'
+Content: quester: 16.5 kaha Dale apne quester: or 3.5 joining bonus bhi quester: :sadge: bglr too costly yar quester: Aap parents k sath rehte ho so or costly ...
+
+Vector #3: DocID=346543, Distance=0.5405, Users='quester, Abbie'
+Content: quester: Set kro Abbie: Aisi jindagi bhagwan kisi ko na de Abbie: Kaash dbms mam se flirting ki jagah rdbms padhli hoti Abbie: To 8 hota Abbie: Kutto ...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=133320, Users='failure, Deleted User, QBit'
+Content: Deleted User: Congrats @Garro on referal from @ammy11 failure: used in my intern project failure: Kon hai Bhai QBit: ;handle get @QBit QBit: ;plot per...
+
+BM25 #2: DocID=95888, Users='QBit, Random Anon'
+Content: Random Anon: Job kon de rha mereko Random Anon: Abhi tak resume nhi hai mere paas🤡 Random Anon: Just khatam hua hai Random Anon: Abhi development seek...
+
+BM25 #3: DocID=133319, Users='Deleted User, failure, Garro, Sarvesh Khodwe, formerly Prasham, QBit'
+Content: Deleted User: https://tenor.com/view/excel-highlight-duplicate-gif-22237103 Garro: I was forced to do so :feelssadman: Sarvesh Khodwe, formerly Prasha...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=133320, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'failure, Deleted User, QBit'
+Content: Deleted User: Congrats @Garro on referal from @ammy11 failure: used in my intern project failure: Kon hai Bhai QBit: ;handle get @QBit QBit: ;plot perf Binary_Thinker QBit: ;plot rating Binary_Thinker...
+
+Rank #2: DocID=95888, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'QBit, Random Anon'
+Content: Random Anon: Job kon de rha mereko Random Anon: Abhi tak resume nhi hai mere paas🤡 Random Anon: Just khatam hua hai Random Anon: Abhi development seekh rha Random Anon: Koi female study buddy dhund rh...
+
+Rank #3: DocID=133319, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'Deleted User, failure, Garro, Sarvesh Khodwe, formerly Prasham, QBit'
+Content: Deleted User: https://tenor.com/view/excel-highlight-duplicate-gif-22237103 Garro: I was forced to do so :feelssadman: Sarvesh Khodwe, formerly Prasham: chal ab sorry bol Garro: @ammy11 sowwi sar:sadg...
+
+Rank #4: DocID=128119, Score=0.007812
+Selected by: UNKNOWN
+Users: 'QBit, Papleshwar'
+Content: Papleshwar: Kalol kalej hai bahi QBit: kaha hai bro? QBit: Avantika ma'am hai QBit: waha toh QBit: see chat QBit: how cut gaya Papleshwar: Bhai meso Papleshwar: Chord Qbit ko...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:56:43,827 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:56:54,691 - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "E:\cmcbot2\discord_bot.py", line 106, in process_message_queue
+    await channel.send(response)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "E:\cmcbot2\discord_bot.py", line 84, in on_message
+    await self.process_message_queue()
+  File "E:\cmcbot2\discord_bot.py", line 110, in process_message_queue
+    await channel.send(error_msg)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+2025-08-31 03:08:10,689 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:08:10,829 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:08:12,772 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:08:16,317 - PyNaCl is not installed, voice will NOT be supported
+2025-08-31 03:08:16,317 - logging in using static token
+2025-08-31 03:08:18,112 - Shard ID None has connected to Gateway (Session ID: 99f16a98836b1061dbae0524060a2c58).
+2025-08-31 03:08:37,472 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:08:39,160 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:08:39,422 - ================================================================================
+HYBRID SEARCH LOG - Query: 'IIT Indore lore'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=31657, Distance=0.4579, Users='malevolent dictator, Avinash yadav bengalan rizzler, Sarvesh Khodwe, formerly Prasham, Abbie'
+Content: malevolent dictator: Bro just could've got cloned Abbie: Could've tweeted Avinash yadav bengalan rizzler: union sir aapke iit ko fake iit bol rhe hai ...
+
+Vector #2: DocID=52495, Distance=0.4608, Users='Avinash yadav bengalan rizzler, milind0110, Abbie'
+Content: Abbie: Padhai ki hoti to real IIT mein hote Avinash yadav bengalan rizzler: indore 2 states pe hai milind0110: Jb bahar hi hai toh iit indore kahe rkh...
+
+Vector #3: DocID=103389, Distance=0.4640, Users='Deleted User, Random Anon, Abbie'
+Content: Abbie: Pls tell IIT mein ragging hoti Deleted User: ofc hoti hai Random Anon: Hoti hai Deleted User: iit kgp mein toh hoti Abbie: Indore safe city Abb...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=255219, Users='Chinmay Gupta, ALESTA, wrackedy'
+Content: wrackedy: for interns ALESTA: tera clg kaunsa he ALESTA: abi tak yehi ni pata wrackedy: iit bjopal ALESTA: iit indore? Chinmay Gupta: iit indore wrack...
+
+BM25 #2: DocID=326053, Users='mesosan, Shinomori, flakes, Abbie'
+Content: Shinomori: .image iiit nagpur flakes: .image iit indore mesosan: wow tf iiit nagpur looks nice mesosan: these images don't do iit indore justice mesos...
+
+BM25 #3: DocID=103389, Users='Deleted User, Random Anon, Abbie'
+Content: Abbie: Pls tell IIT mein ragging hoti Deleted User: ofc hoti hai Random Anon: Hoti hai Deleted User: iit kgp mein toh hoti Abbie: Indore safe city Abb...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103389, Score=0.012191
+Selected by: HYBRID (Vector + BM25)
+Users: 'Deleted User, Random Anon, Abbie'
+Content: Abbie: Pls tell IIT mein ragging hoti Deleted User: ofc hoti hai Random Anon: Hoti hai Deleted User: iit kgp mein toh hoti Abbie: Indore safe city Abbie: Women can roam till 3 AM in Indore Deleted Use...
+
+Rank #2: DocID=44250, Score=0.011442
+Selected by: UNKNOWN
+Users: 'Deleted User, stack, tyroWhiz, milind0110, Sarvesh Khodwe, formerly Prasham, Shreyas'
+Content: stack: accha contest nahi tha indore waalo ka waise milind0110: Iit india:prayge: Sarvesh Khodwe, formerly Prasham: iit bharat better tbh Shreyas: phle do question to jee level ke the Shreyas: vhi hue...
+
+Rank #3: DocID=31657, Score=0.011388
+Selected by: VECTOR ONLY
+Users: 'malevolent dictator, Avinash yadav bengalan rizzler, Sarvesh Khodwe, formerly Prasham, Abbie'
+Content: malevolent dictator: Bro just could've got cloned Abbie: Could've tweeted Avinash yadav bengalan rizzler: union sir aapke iit ko fake iit bol rhe hai :hmmmm: . Defend iit indore. Abbie: Indore isn't r...
+
+Rank #4: DocID=52495, Score=0.010677
+Selected by: VECTOR ONLY
+Users: 'Avinash yadav bengalan rizzler, milind0110, Abbie'
+Content: Abbie: Padhai ki hoti to real IIT mein hote Avinash yadav bengalan rizzler: indore 2 states pe hai milind0110: Jb bahar hi hai toh iit indore kahe rkha Avinash yadav bengalan rizzler: roj nyi id se aa...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 0/4 (0.0%)
+Hybrid (Both): 1/4 (25.0%)
+================================================================================
+
+2025-08-31 03:08:41,173 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:09:41,799 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:09:42,314 - ================================================================================
+HYBRID SEARCH LOG - Query: 'Where does Abbie work right now?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=316420, Distance=0.4063, Users='noob_cper, ALESTA, Abbie'
+Content: Abbie: https://workat.tech ALESTA: Abbie ji Abbie: are you enjoying freedom noob_cper: thanks abbie for being a senior i never had Abbie: did you inte...
+
+Vector #2: DocID=147235, Distance=0.4600, Users='dkdon, Abbie'
+Content: Abbie: no free time dkdon: Yeh kio startup hai kya Abbie: Cmc works there very good salary dkdon: Phir toh bdiya hai bhai mein toh abhi second year me...
+
+Vector #3: DocID=280338, Distance=0.4638, Users='ThoughtCrime, Akshat, Abbie'
+Content: Abbie: she isn't there Akshat: how do you know Abbie: no cute girls Abbie: jk, many Akshat: hmmm diplomat Akshat: wont reveal floor now Abbie: trust h...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=340763, Users='Abbie, Nandini'
+Content: Abbie: Where does Devishi study Nandini: Yes. Now I started working hard. ( 1 week back ) Nandini: Because I want to move out. Feels like rotting with...
+
+BM25 #2: DocID=334069, Users='itz_cloverking19, nmnsharma007, derParod, Abbie'
+Content: itz_cloverking19: what is meaning of piped ? does it mean fired? derParod: Where do u work Abbie: fired with some buffer time nmnsharma007: about to g...
+
+BM25 #3: DocID=336945, Users='Abbie, mooli'
+Content: Abbie: Travel booking one scammed tho Abbie: Where is friend now Abbie: Was he also not paid mooli: Idk i dont like the guy mooli: He barely does any ...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=340763, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'Abbie, Nandini'
+Content: Abbie: Where does Devishi study Nandini: Yes. Now I started working hard. ( 1 week back ) Nandini: Because I want to move out. Feels like rotting with same work Abbie: But you have life outside work A...
+
+Rank #2: DocID=334069, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'itz_cloverking19, nmnsharma007, derParod, Abbie'
+Content: itz_cloverking19: what is meaning of piped ? does it mean fired? derParod: Where do u work Abbie: fired with some buffer time nmnsharma007: about to get fired itz_cloverking19: final year now nmnsharm...
+
+Rank #3: DocID=336945, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'Abbie, mooli'
+Content: Abbie: Travel booking one scammed tho Abbie: Where is friend now Abbie: Was he also not paid mooli: Idk i dont like the guy mooli: He barely does any communication mooli: I didnt start amy work mooli:...
+
+Rank #4: DocID=340762, Score=0.007812
+Selected by: UNKNOWN
+Users: 'Nandini, Abbie, mooli'
+Content: mooli: he was bullied by uber driver Abbie: So you are lazy Nandini: The ot Nandini: The og Abbie: Where does Devishi study Nandini: Yes. Now I started working hard. ( 1 week back ) Nandini: Because I...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:09:43,073 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:10:03,549 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:10:04,117 - ================================================================================
+HYBRID SEARCH LOG - Query: 'what do you know about greenstitch'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=324757, Distance=0.6431, Users='Yudhistir, Abbie, ALESTA'
+Content: Abbie: have you tried applying with referral Yudhistir: gugl me bohot try kra but till date didnt got any calls Yudhistir: and linkedin pe greendians ...
+
+Vector #2: DocID=61079, Distance=0.6444, Users='ThoughtCrime, stack, tyroWhiz, milind0110, mrsir'
+Content: stack: imo prioritise upsolving mrsir: Ok sir tyroWhiz: @stack how to become grand masta at codeforces stack: buy common sense from market milind0110:...
+
+Vector #3: DocID=62974, Distance=0.6509, Users='ThoughtCrime, yeetholmes619, stack, Abbie, mrsir'
+Content: ThoughtCrime: i also started as green ThoughtCrime: i am now light green mrsir: Today you blue Abbie: is there some algo because people still start at...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=205285, Users='Believer., Abbie'
+Content: Believer.: Where and how to learn algo so I can master @Abbie Abbie: It's not about learning it's about knowing existence Believer.: How to know Abbie...
+
+BM25 #2: DocID=3560, Users='codemasterdoujin, Homelander, dedsec'
+Content: Homelander: i did not know about merge sort tree Homelander: and i was pleasantly surprised to hear about it from you dedsec: Lately I have been readi...
+
+BM25 #3: DocID=195414, Users='shivang., flacko, NonTechNerd69, Abbie'
+Content: NonTechNerd69: you know about @cache in python? shivang.: I know about memoization flacko: toh kr na Abbie: do you shivang.: wdym what is brute force ...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=205285, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'Believer., Abbie'
+Content: Believer.: Where and how to learn algo so I can master @Abbie Abbie: It's not about learning it's about knowing existence Believer.: How to know Abbie: Do you know Kosaraju Believer.: What is lcp Abbi...
+
+Rank #2: DocID=3560, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'codemasterdoujin, Homelander, dedsec'
+Content: Homelander: i did not know about merge sort tree Homelander: and i was pleasantly surprised to hear about it from you dedsec: Lately I have been reading about treaps, do you know treaps? Homelander: i...
+
+Rank #3: DocID=195414, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'shivang., flacko, NonTechNerd69, Abbie'
+Content: NonTechNerd69: you know about @cache in python? shivang.: I know about memoization flacko: toh kr na Abbie: do you shivang.: wdym what is brute force NonTechNerd69: was F a common problem? Abbie: Only...
+
+Rank #4: DocID=345728, Score=0.007812
+Selected by: UNKNOWN
+Users: 'jashan, flakes, Abbie, mooli'
+Content: Abbie: hot CEO flakes: how did u fumble jashan: har switch pe salary increase hoti kya ? Abbie: I care about remote flakes: beech me greenstitch me tha na Abbie: too small to mention mooli: why leave ...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:10:05,488 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:10:23,825 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:10:24,381 - ================================================================================
+HYBRID SEARCH LOG - Query: 'Flakes ka real name kya hai?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=183097, Distance=0.2964, Users='Avinash Yadav Flipkart, Amazon, Abbie, felish, Aman Yadav, flakes'
+Content: flakes: name doxx? Aman Yadav: jane street material Abbie: if you had any you wouldn't be cucking iitians Avinash Yadav Flipkart, Amazon: people know ...
+
+Vector #2: DocID=146289, Distance=0.3091, Users='Electrify, flakes, Sarvesh Khodwe, formerly Prasham, Abbie'
+Content: flakes: sabko pata hogya ab kya use Electrify: real name bolo Abbie: Raghav Arora Sarvesh Khodwe, formerly Prasham: ik alestaji insta flakes: raghav a...
+
+Vector #3: DocID=265127, Distance=0.3133, Users='itz_cloverking19, Dipstick, Chinmay Gupta, flakes'
+Content: flakes: very bad flakes: ye toh bilkul nhi lunga Dipstick: i will never be able to say this flakes: just for reference Chinmay Gupta: sona bhul gye gu...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=339458, Users='jashan, VILGAX'
+Content: VILGAX: Udai bhai k real name kya h jashan: udai hi hai real name jashan: he is different VILGAX: Usko bhi ping kr dena zra VILGAX: Dono se puch leta ...
+
+BM25 #2: DocID=288571, Users='Dipstick, Shinomori, flakes, wrackedy'
+Content: flakes: and she reuses for every booking Dipstick: avishi is a real name flakes: did u think we were joking Shinomori: Squarepnt h kya flakes: are moc...
+
+BM25 #3: DocID=116206, Users='Deleted User, Ayush, Abbie, Sarvesh Khodwe, formerly Prasham, flakes'
+Content: Abbie: Sayan will debug Deleted User: Ask gpt Sarvesh Khodwe, formerly Prasham: Hivon's real name is khushi? Abbie: Mann nahi karta ab code padhne ka ...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=146289, Score=0.013264
+Selected by: VECTOR ONLY
+Users: 'Electrify, flakes, Sarvesh Khodwe, formerly Prasham, Abbie'
+Content: flakes: sabko pata hogya ab kya use Electrify: real name bolo Abbie: Raghav Arora Sarvesh Khodwe, formerly Prasham: ik alestaji insta flakes: raghav alesta arora flakes: chemical science Abbie: Raghav...
+
+Rank #2: DocID=339458, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'jashan, VILGAX'
+Content: VILGAX: Udai bhai k real name kya h jashan: udai hi hai real name jashan: he is different VILGAX: Usko bhi ping kr dena zra VILGAX: Dono se puch leta hu VILGAX: Next round ka ek baari jashan: wait I t...
+
+Rank #3: DocID=288571, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Dipstick, Shinomori, flakes, wrackedy'
+Content: flakes: and she reuses for every booking Dipstick: avishi is a real name flakes: did u think we were joking Shinomori: Squarepnt h kya flakes: are mock intvw hai Dipstick: i thought it was avi sir's n...
+
+Rank #4: DocID=116206, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'Deleted User, Ayush, Abbie, Sarvesh Khodwe, formerly Prasham, flakes'
+Content: Abbie: Sayan will debug Deleted User: Ask gpt Sarvesh Khodwe, formerly Prasham: Hivon's real name is khushi? Abbie: Mann nahi karta ab code padhne ka Ayush: ye t==179 shit kya he Deleted User: No her ...
+
+📊 SELECTION STATISTICS:
+Vector Only: 1/4 (25.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:10:25,850 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:10:39,235 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:10:39,519 - ================================================================================
+HYBRID SEARCH LOG - Query: 'dhakkad kon hai'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=192865, Distance=0.5514, Users='Madao, Dipstick, Avinash yadav bengalan rizzler, flacko'
+Content: Dipstick: 4 din se laptop nhi khola flacko: de do contest flacko: kya hi fark par rha Dipstick: dunga :prayge: Avinash yadav bengalan rizzler: @callme...
+
+Vector #2: DocID=252967, Distance=0.5524, Users='sama, Dipstick, Avinash yadav bengalan rizzler, flacko'
+Content: sama: team dhund rha flacko: Mene kya kiya :sadge: Dipstick: https://tenor.com/view/fthememer-discordia-discordian-discordia-india-discordia-hindi-gif...
+
+Vector #3: DocID=191284, Distance=0.5525, Users='ThoughtCrime, Dipstick, Whoami, Abbie, flacko, Madao'
+Content: Abbie: he's in blr Madao: icpc ig ThoughtCrime: accha okay ThoughtCrime: accha laga aaj waala D dekhar. Har contest mai cancer sawal dekhar bore ho ja...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=347281, Users='Anup, flacko, Nandini'
+Content: Anup: any gay Anup: https://amzn.in/d/5pmUC7w Anup: please sponsor flacko: ye kon h ? Nandini: Soumya Dhakkad flacko: ain't no way flacko: aap hoe kya...
+
+BM25 #2: DocID=337894, Users='jashan, Abbie'
+Content: Abbie: ppo bhj nahi aayega jashan: soumya dhakkad jashan: meri nahi fatt ti jashan: lega kon jashan: ye batao Abbie: soumya is highest lpa in 2024-5-6...
+
+BM25 #3: DocID=319594, Users='mesosan, ThoughtCrime, Sana'
+Content: Sana: Why can't you sleep now mesosan: dhakkad lode kidhar gaya abhi need hai toh Sana: Before they leave mesosan: gate band kon karega ThoughtCrime: ...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=347281, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'Anup, flacko, Nandini'
+Content: Anup: any gay Anup: https://amzn.in/d/5pmUC7w Anup: please sponsor flacko: ye kon h ? Nandini: Soumya Dhakkad flacko: ain't no way flacko: aap hoe kya Nandini: Not in town...
+
+Rank #2: DocID=337894, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'jashan, Abbie'
+Content: Abbie: ppo bhj nahi aayega jashan: soumya dhakkad jashan: meri nahi fatt ti jashan: lega kon jashan: ye batao Abbie: soumya is highest lpa in 2024-5-6 combined jashan: kya puchoge jashan: only dsa ?...
+
+Rank #3: DocID=319594, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'mesosan, ThoughtCrime, Sana'
+Content: Sana: Why can't you sleep now mesosan: dhakkad lode kidhar gaya abhi need hai toh Sana: Before they leave mesosan: gate band kon karega ThoughtCrime: actually my lunch ended close to 3 mesosan: bahar ...
+
+Rank #4: DocID=337468, Score=0.007812
+Selected by: UNKNOWN
+Users: 'Blessed, mesosan, quester'
+Content: Blessed: udhar mass hiring krti Blessed: kaafi baddies hogi mesosan: dhakkad bata de varna kick Blessed: abhi 12 baddies aayi mesosan: ,kick dhakkad mesosan: Yahi hai dhakkad ki gaand fat gayi quester...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:10:41,325 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:11:31,410 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:11:31,752 - ================================================================================
+HYBRID SEARCH LOG - Query: 'Siri and Akul relationship'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=233118, Distance=0.5308, Users='Akshat, Sana'
+Content: Akshat: ooo BTSA? Akshat: ya data engineering Akshat: i've friends there Sana: then join here Sana: altho it pays peanuts Sana: compared to you Akshat...
+
+Vector #2: DocID=278940, Distance=0.5310, Users='Sarvesh Khodwe, formerly Prasham, Avinash yadav bengalan rizzler, Akshat, ALESTA'
+Content: Akshat: wow alexa writes sundar code ALESTA: that is sundar Akshat: maybe not asthetically Akshat: but technically yes Sarvesh Khodwe, formerly Prasha...
+
+Vector #3: DocID=256681, Distance=0.5330, Users='Akshat, Sana, wrackedy, flakes'
+Content: Akshat: unify apps me ho to flakes: akshat ji how is salesforce life Sana: ugh my sleep schedule so fucked Sana: i can't sleep this early wrackedy: do...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=317403, Users='ThoughtCrime, nmnsharma007, tyroWhiz'
+Content: tyroWhiz: Global ka d banao last tyroWhiz: Troll problem ThoughtCrime: not recent nmnsharma007: Sayan sir, grind ke baad gf banana bas ThoughtCrime: m...
+
+BM25 #2: DocID=99268, Users='QBit, Deleted User, Random Anon, Abbie'
+Content: Abbie: and branch Abbie: and employment status Abbie: and relationship status QBit: Wait telling Random Anon: Yess important question Abbie: sab bata ...
+
+BM25 #3: DocID=103350, Users='Akshat, Papleshwar, tyroWhiz, Abbie'
+Content: Abbie: iPhone was launched for South Delhi Girls Papleshwar: Steve jobs was sabotaging tyroWhiz: steve jobs came back apple got good again steve jobs ...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=317403, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'ThoughtCrime, nmnsharma007, tyroWhiz'
+Content: tyroWhiz: Global ka d banao last tyroWhiz: Troll problem ThoughtCrime: not recent nmnsharma007: Sayan sir, grind ke baad gf banana bas ThoughtCrime: matlab whichever contest i didnt do since aug nmnsh...
+
+Rank #2: DocID=99268, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'QBit, Deleted User, Random Anon, Abbie'
+Content: Abbie: and branch Abbie: and employment status Abbie: and relationship status QBit: Wait telling Random Anon: Yess important question Abbie: sab bata do warna respect nahi karenge Deleted User: IITB k...
+
+Rank #3: DocID=103350, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'Akshat, Papleshwar, tyroWhiz, Abbie'
+Content: Abbie: iPhone was launched for South Delhi Girls Papleshwar: Steve jobs was sabotaging tyroWhiz: steve jobs came back apple got good again steve jobs died and apply has made 0 changes in any product P...
+
+Rank #4: DocID=78154, Score=0.007812
+Selected by: UNKNOWN
+Users: 'ThoughtCrime, Papleshwar, GoatTamer, Abbie, Sarvesh Khodwe, formerly Prasham'
+Content: ThoughtCrime: Okay i was not too far off Papleshwar: Dusre server mai jaake fir rate puche Sarvesh Khodwe, formerly Prasham: Imagine flirting on discord Papleshwar: Bruh you lived it Abbie: master log...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:11:33,224 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:12:25,331 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:12:26,033 - ================================================================================
+HYBRID SEARCH LOG - Query: 'servicenow ka kya relation hai cmc server se'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=329431, Distance=0.5203, Users='Blessed, Avinash yadav bengalan rizzler, Shinomori, mesosan, flakes'
+Content: mesosan: yes they don't have their on pdt Blessed: servicenow acts as hub for 1e9 things so they want customers to access everything from servicenow p...
+
+Vector #2: DocID=326943, Distance=0.5351, Users='Blessed, Shinomori, jashan, Abbie, Sarvesh Khodwe, formerly Prasham, mooli'
+Content: Shinomori: Idk bkc krra tha mooli: avi sir helping juniors Blessed: servicenow platform ki help se banana hai to it uses JS Sarvesh Khodwe, formerly P...
+
+Vector #3: DocID=310835, Distance=0.5400, Users='Shinomori, VILGAX, Gulab Jamun (sada hua  )'
+Content: Shinomori: baaki amazon nvidea servicenow atlassian me ppo mila hai ldkiyon ko ig Shinomori: but wo off campus the Shinomori: MG stanley bhi , wo bhi ...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=265194, Users='sama, flakes, wrackedy, ammy11'
+Content: wrackedy: sama is hopeless sama: mcq se dev ka kya relation flakes: he has product with 30 dau flakes: no one else in server has achieved that flakes:...
+
+BM25 #2: DocID=327259, Users='Blessed, Shinomori'
+Content: Shinomori: Mrko intern lgwa bhai servicenow me Blessed: you’re made to build something crazy these no-code/low-code things are for noobs like me :sadg...
+
+BM25 #3: DocID=4978, Users='malevolent dictator, Deleted User, Chinmay Gupta, Similie'
+Content: Similie: Mirinda is the wife of Donald Trump Chinmay Gupta: mirinda se kya relation malevolent dictator: relation ki hi baat ho rhi malevolent dictato...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=327259, Score=0.011653
+Selected by: BM25 ONLY
+Users: 'Blessed, Shinomori'
+Content: Shinomori: Mrko intern lgwa bhai servicenow me Blessed: you’re made to build something crazy these no-code/low-code things are for noobs like me :sadge: Shinomori: Mf trko servicenow software ka backe...
+
+Rank #2: DocID=342167, Score=0.010063
+Selected by: UNKNOWN
+Users: 'Blessed, Shinomori, mooli'
+Content: Blessed: servicenow wln is crazy mooli: atlassian ctc doesnt compare to servicenow Shinomori: saturday ky krta bhai tb to koi na rheta hoga Blessed: kitna deta atl. mooli: avi sir ko toh 35 diya tha B...
+
+Rank #3: DocID=265194, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'sama, flakes, wrackedy, ammy11'
+Content: wrackedy: sama is hopeless sama: mcq se dev ka kya relation flakes: he has product with 30 dau flakes: no one else in server has achieved that flakes: except cmc ammy11: Bkl company kitna dheere relea...
+
+Rank #4: DocID=4978, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'malevolent dictator, Deleted User, Chinmay Gupta, Similie'
+Content: Similie: Mirinda is the wife of Donald Trump Chinmay Gupta: mirinda se kya relation malevolent dictator: relation ki hi baat ho rhi malevolent dictator: unold member Similie: She had some sort of rela...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:12:27,762 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:12:40,743 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:12:41,090 - ================================================================================
+HYBRID SEARCH LOG - Query: 'Derpy ka sexual orientation'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=278108, Distance=0.4941, Users='sher, Abbie, flacko, felish, flakes'
+Content: sher: .imagine derpy w a gun in mouth flacko: kyu bhai flakes: .imagine derpy killing himself sher: mohak kon felish: already assumed derpy is a monst...
+
+Vector #2: DocID=194118, Distance=0.5121, Users='Dipstick, flakes, Garro, Abbie'
+Content: Abbie: why hide identity on discord Dipstick: discord the reason people want to be anon Garro: she also anon like nontech Abbie: Bitch Derpy Abbie: Is...
+
+Vector #3: DocID=194119, Distance=0.5237, Users='Dipstick, flakes, Garro, Abbie'
+Content: Abbie: Isn't Derpy a kutta flakes: bc contradicting statements Abbie: Your fwb Dipstick: derpy is ನಾಯಿ Abbie: you may not but we'll find her Garro: I ...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=213899, Users='wilonshelf, Abbie, reki, sychi'
+Content: wilonshelf: i don't know lnct ke members which batch name face sexual orientation reki: i am a girl sychi: Yoshi left Keanu right ( filtered picture) ...
+
+BM25 #2: DocID=209012, Users='Avinash yadav bengalan rizzler, Garro, Papleshwar, Similie, wilonshelf, felish, pvtr'
+Content: pvtr: sir would u like 2 test, 3 problems prepare hogyi h Papleshwar: @Avinash yadav bengalan rizzler Similie: yes i think Garro: bengal is not a reli...
+
+BM25 #3: DocID=175978, Users='Dipstick, shivang., nmnsharma007, itz_cloverking19, Yudhistir, felish'
+Content: felish: Sexual orientation in case the HR wants a vent out. nmnsharma007: humare ko aise jobs nhi ate the felish: Worth it hai dena? IQ test se kon ko...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=213899, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'wilonshelf, Abbie, reki, sychi'
+Content: wilonshelf: i don't know lnct ke members which batch name face sexual orientation reki: i am a girl sychi: Yoshi left Keanu right ( filtered picture) Abbie: 7/11 was also gay initially, you just need ...
+
+Rank #2: DocID=209012, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Avinash yadav bengalan rizzler, Garro, Papleshwar, Similie, wilonshelf, felish, pvtr'
+Content: pvtr: sir would u like 2 test, 3 problems prepare hogyi h Papleshwar: @Avinash yadav bengalan rizzler Similie: yes i think Garro: bengal is not a religion it's a sexual orientation ❤️‍🔥 felish: Lucti ...
+
+Rank #3: DocID=175978, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'Dipstick, shivang., nmnsharma007, itz_cloverking19, Yudhistir, felish'
+Content: felish: Sexual orientation in case the HR wants a vent out. nmnsharma007: humare ko aise jobs nhi ate the felish: Worth it hai dena? IQ test se kon konse companies mei admission mil sakta? shivang.: @...
+
+Rank #4: DocID=134252, Score=0.007812
+Selected by: UNKNOWN
+Users: 'malevolent dictator, Deleted User, sama, Abbie'
+Content: Abbie: thanks will DM Abbie: qualifications se zyada to gender information poochhte ye Abbie: application mein Abbie: Pronouns, Ethnicity, Sexual Orientation Deleted User: Linkedlist was more fun then...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:12:43,308 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:15:40,640 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:15:40,938 - ================================================================================
+HYBRID SEARCH LOG - Query: 'what is athenahealth'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=345718, Distance=0.5788, Users='Abbie, Anup, Sarvesh Khodwe, formerly Prasham, ALESTA, mooli, flakes'
+Content: Abbie: Athena hr said if you were looking for wlb in career you joined right place Abbie: had best time in Blr this time after I found good food spots...
+
+Vector #2: DocID=339372, Distance=0.5805, Users='ThoughtCrime, jashan, Abbie, ALESTA, flakes, Nandini'
+Content: ALESTA: Tf this ALESTA: Switcjing again? Nandini: Congrats on joining Anthenahealth ThoughtCrime: He has switched twice since he left flipkart Thought...
+
+Vector #3: DocID=352154, Distance=0.5861, Users='Shinomori, Abbie, Sarvesh Khodwe, formerly Prasham, Nyx, drdoffy'
+Content: drdoffy: okay sorry Abbie: it says mansi gupta :sadge: Abbie: should i send Sarvesh Khodwe, formerly Prasham: Who's the intern here Shinomori: real ha...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=352151, Users='Avinash yadav bengalan rizzler, Abbie, itz_cloverking19, Nyx, drdoffy'
+Content: Nyx: For msft Avinash yadav bengalan rizzler: Lucti ji angry after stock crash ig drdoffy: ok what company drdoffy: never heard itz_cloverking19: Sapi...
+
+BM25 #2: DocID=352154, Users='Shinomori, Abbie, Sarvesh Khodwe, formerly Prasham, Nyx, drdoffy'
+Content: drdoffy: okay sorry Abbie: it says mansi gupta :sadge: Abbie: should i send Sarvesh Khodwe, formerly Prasham: Who's the intern here Shinomori: real ha...
+
+BM25 #3: DocID=339327, Users='Shinomori, jashan, Abbie'
+Content: jashan: lc pe Abbie: didn't solve Abbie: gay lazy segtree Abbie: with coordinate compression Shinomori: ye hai kya Shinomori: https://www.linkedin.com...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=352154, Score=0.011349
+Selected by: HYBRID (Vector + BM25)
+Users: 'Shinomori, Abbie, Sarvesh Khodwe, formerly Prasham, Nyx, drdoffy'
+Content: drdoffy: okay sorry Abbie: it says mansi gupta :sadge: Abbie: should i send Sarvesh Khodwe, formerly Prasham: Who's the intern here Shinomori: real hai kya Nyx: Whose dm? Abbie: hottest one is intern ...
+
+Rank #2: DocID=345718, Score=0.011145
+Selected by: VECTOR ONLY
+Users: 'Abbie, Anup, Sarvesh Khodwe, formerly Prasham, ALESTA, mooli, flakes'
+Content: Abbie: Athena hr said if you were looking for wlb in career you joined right place Abbie: had best time in Blr this time after I found good food spots Sarvesh Khodwe, formerly Prasham: Sir pls refer A...
+
+Rank #3: DocID=331671, Score=0.009993
+Selected by: UNKNOWN
+Users: 'ThoughtCrime, ALESTA, Abbie'
+Content: ALESTA: Sayan ji pls batao kya padhu cpp me Abbie: Athenahealth is hiring java guys, interview on wed ALESTA: Aur kuch to nhi ho paega ThoughtCrime: Bro meso ko pucho ya cmc ko ALESTA: Kam to aapne ki...
+
+Rank #4: DocID=345925, Score=0.009860
+Selected by: UNKNOWN
+Users: 'jashan, ALESTA, Abbie, Nandini'
+Content: Abbie: weren't you trying to leave Abbie: oa to aa jata iska Abbie: cper jo Abhishek Shrivastav de raha tha Nandini: How is athenahealth work 🔥 Abbie: Thursday meetup hoga manager se abhi to onboardin...
+
+📊 SELECTION STATISTICS:
+Vector Only: 1/4 (25.0%)
+BM25 Only: 0/4 (0.0%)
+Hybrid (Both): 1/4 (25.0%)
+================================================================================
+
+2025-08-31 03:15:43,121 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:16:00,212 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:16:00,311 - ================================================================================
+HYBRID SEARCH LOG - Query: 'jsjdheuejsjdhdydhdh'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=308235, Distance=0.7309, Users='Udai Negi, jashan, Abbie'
+Content: jashan: udai tu rajput nahi hai ? Abbie: pahad se seedha desert Udai Negi: Hu bhai Udai Negi: Pahadi b rajput hote h jashan: pahadi rajpur Udai Negi: ...
+
+Vector #2: DocID=312534, Distance=0.7322, Users='jashan, Abbie'
+Content: jashan: didnt even see the msg Abbie: ping here jashan: crush ki kasam jashan: but easy tha jashan: striver wala ques tha jashan: jo striver ne krwaya...
+
+Vector #3: DocID=324270, Distance=0.7360, Users='jashan, popsicles, Abbie'
+Content: jashan: who ayush jashan: usko toh janta jashan: kya hua popsicles: aise hi Abbie: Udai job doondh bkc band kar de popsicles: juspay ho gya uska jasha...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=352875, Users='sama, Abbie, Nandini'
+Content: sama: @Blessed https://vit-placements-tracker-btech2026.streamlit.app/ sama: make for parul sama: tnp aur impress hokr 80lpa krne bolenge servicenow k...
+
+BM25 #2: DocID=117628, Users='malevolent dictator, Babruvahan, tyroWhiz'
+Content: tyroWhiz: I have alrdy said that I am not smart problems are ez most of the time it comes to intuition and elimination malevolent dictator: Yea Proble...
+
+BM25 #3: DocID=117620, Users='Shreyas, hopeless, tyroWhiz'
+Content: Shreyas: btw Finally humara college jaga .Not so retarded after all tyroWhiz: Tab bhi hire nahi karga koi Shreyas: Shaw OA on 9 th tyroWhiz: True, apn...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=308235, Score=0.002206
+Selected by: VECTOR ONLY
+Users: 'Udai Negi, jashan, Abbie'
+Content: jashan: udai tu rajput nahi hai ? Abbie: pahad se seedha desert Udai Negi: Hu bhai Udai Negi: Pahadi b rajput hote h jashan: pahadi rajpur Udai Negi: Change of scenery Abbie: Padhai mein itna kaise ha...
+
+Rank #2: DocID=312534, Score=0.002160
+Selected by: VECTOR ONLY
+Users: 'jashan, Abbie'
+Content: jashan: didnt even see the msg Abbie: ping here jashan: crush ki kasam jashan: but easy tha jashan: striver wala ques tha jashan: jo striver ne krwaya tha Abbie: hr ko coding aata paypal mein jashan: ...
+
+Rank #3: DocID=324270, Score=0.002096
+Selected by: VECTOR ONLY
+Users: 'jashan, popsicles, Abbie'
+Content: jashan: who ayush jashan: usko toh janta jashan: kya hua popsicles: aise hi Abbie: Udai job doondh bkc band kar de popsicles: juspay ho gya uska jashan: uska juspay hogya jashan: @Udai Negi...
+
+Rank #4: DocID=311530, Score=0.002061
+Selected by: UNKNOWN
+Users: 'Blessed, jashan, Abbie'
+Content: jashan: who is sanjay_878 Abbie: korean pfp Blessed: my idol jashan: any src for js ques Abbie: they won't ask js jashan: resume me hai hi vo jashan: 2 project both js jashan: next js, react js...
+
+📊 SELECTION STATISTICS:
+Vector Only: 3/4 (75.0%)
+BM25 Only: 0/4 (0.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:16:03,633 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:16:53,376 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:16:53,998 - ================================================================================
+HYBRID SEARCH LOG - Query: 'avi aur bangalan ka kya rishta hai'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=324226, Distance=0.5278, Users='Avinash yadav bengalan rizzler, Buriza, Abbie'
+Content: Buriza: lucti marriage?? Avinash yadav bengalan rizzler: Lucti 2026 marriage Avinash yadav bengalan rizzler: Save dates Abbie: destination wedding Avi...
+
+Vector #2: DocID=324225, Distance=0.5331, Users='Avinash yadav bengalan rizzler, Buriza, Abbie'
+Content: Avinash yadav bengalan rizzler: Wanna marry her Buriza: is it that sodo girl Abbie: Lucti marriage Buriza not invited Avinash yadav bengalan rizzler: ...
+
+Vector #3: DocID=210076, Distance=0.5369, Users='Avinash yadav bengalan rizzler, flakes, shivang., Abbie'
+Content: shivang.: ye to qt hai Avinash yadav bengalan rizzler: i will try to become joshi's best man i have 1 yr left Avinash yadav bengalan rizzler: plan ban...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=55679, Users='ThoughtCrime, Avinash yadav bengalan rizzler, stack, Papleshwar, GoatTamer'
+Content: stack: phir uss video ka kya karu mein Papleshwar: Abhi release ke baad Papleshwar: Sex ki @Sarvesh Khodwe, formerly Prasham ke paas hai Avinash yadav...
+
+BM25 #2: DocID=256609, Users='Blessed, wrackedy, diabolical'
+Content: wrackedy: idt he's bad person Blessed: harshit ji and u same office? :catwow: wrackedy: does he spam GIF irl Blessed: kya wo sabko i love india bolte ...
+
+BM25 #3: DocID=56583, Users='failure, ThoughtCrime, tyroWhiz, Papleshwar'
+Content: Papleshwar: Avi se seekhlo failure: @stack , @Abbie and @tyroWhiz bits Goa waale round ka koi mail aaya hai kya? Papleshwar: Vo sikhayega how to get b...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=55679, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'ThoughtCrime, Avinash yadav bengalan rizzler, stack, Papleshwar, GoatTamer'
+Content: stack: phir uss video ka kya karu mein Papleshwar: Abhi release ke baad Papleshwar: Sex ki @Sarvesh Khodwe, formerly Prasham ke paas hai Avinash yadav bengalan rizzler: saale tune isme kitne paise cha...
+
+Rank #2: DocID=256609, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Blessed, wrackedy, diabolical'
+Content: wrackedy: idt he's bad person Blessed: harshit ji and u same office? :catwow: wrackedy: does he spam GIF irl Blessed: kya wo sabko i love india bolte instead of saying hii diabolical: Same team wracke...
+
+Rank #3: DocID=56583, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'failure, ThoughtCrime, tyroWhiz, Papleshwar'
+Content: Papleshwar: Avi se seekhlo failure: @stack , @Abbie and @tyroWhiz bits Goa waale round ka koi mail aaya hai kya? Papleshwar: Vo sikhayega how to get bangalan gf ThoughtCrime: Aya tha abbie ko tyroWhiz...
+
+Rank #4: DocID=256610, Score=0.007812
+Selected by: UNKNOWN
+Users: 'Blessed, Avinash yadav bengalan rizzler, wrackedy, diabolical'
+Content: diabolical: Same team wrackedy: JIIT aur gugl ka purana rishta hai Blessed: parul randikhane ka kisise rishta nhi wrackedy: dont be sad sabko ek din zomato hi jana hai wrackedy: such disapointemtnt Av...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:16:56,577 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:17:08,111 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:17:08,602 - ================================================================================
+HYBRID SEARCH LOG - Query: 'Prince Gupta ke basement ka sach'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=270400, Distance=0.5206, Users='Avinash yadav bengalan rizzler, Chinmay Gupta, Sarvesh Khodwe, formerly Prasham'
+Content: Chinmay Gupta: blackrock vaise bhi best company Sarvesh Khodwe, formerly Prasham: mai ek chutiye ko jaanta hu jo br ggn me kaam karta hai irl miljaye ...
+
+Vector #2: DocID=278416, Distance=0.5265, Users='Avinash yadav bengalan rizzler, Chinmay Gupta, Abbie, mooli'
+Content: Chinmay Gupta: sharing with whom Chinmay Gupta: and where is the flat Avinash yadav bengalan rizzler: Adobe mai pakdunga Avinash yadav bengalan rizzle...
+
+Vector #3: DocID=236932, Distance=0.5282, Users='ThoughtCrime, Chinmay Gupta, wrackedy'
+Content: Chinmay Gupta: kaha rehta hai Chinmay Gupta: adress de ThoughtCrime: he stay with uncle Chinmay Gupta: :holyf: bhopal me kidhar Chinmay Gupta: chud ja...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=109009, Users='PolyGon, tyroWhiz, Papleshwar, Abbie'
+Content: Papleshwar: Annoying ke saath Abbie: Prince Gupta :sadge: Abbie: Prince Epstein Papleshwar: Riyal owner of this pfp PolyGon: prince :catwow: tyroWhiz:...
+
+BM25 #2: DocID=154429, Users='Chinmay Gupta, Akshat, ALESTA'
+Content: Akshat: 1 year ka project hai, 1 ghante ka nahi :sadge: Chinmay Gupta: alesta ladki hai? ALESTA: ladki hoke bhi no intern Chinmay Gupta: sach me? Aksh...
+
+BM25 #3: DocID=133074, Users='ThoughtCrime, Avinash yadav bengalan rizzler, failure, Papleshwar, Abbie, diabolical, Akshat'
+Content: Abbie: Congratulations Hivon ke aadmi Avinash yadav bengalan rizzler: Prince gupta meri udhari pe jee rha diabolical: Wintern GE fte susco failure: Va...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=109009, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'PolyGon, tyroWhiz, Papleshwar, Abbie'
+Content: Papleshwar: Annoying ke saath Abbie: Prince Gupta :sadge: Abbie: Prince Epstein Papleshwar: Riyal owner of this pfp PolyGon: prince :catwow: tyroWhiz: :catthink: its someone u would dream to be Abbie:...
+
+Rank #2: DocID=154429, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Chinmay Gupta, Akshat, ALESTA'
+Content: Akshat: 1 year ka project hai, 1 ghante ka nahi :sadge: Chinmay Gupta: alesta ladki hai? ALESTA: ladki hoke bhi no intern Chinmay Gupta: sach me? Akshat: ye banate banate mrityu near hai Chinmay Gupta...
+
+Rank #3: DocID=133074, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'ThoughtCrime, Avinash yadav bengalan rizzler, failure, Papleshwar, Abbie, diabolical, Akshat'
+Content: Abbie: Congratulations Hivon ke aadmi Avinash yadav bengalan rizzler: Prince gupta meri udhari pe jee rha diabolical: Wintern GE fte susco failure: Vasooli karwao Papleshwar: Uske baad saylor pe probl...
+
+Rank #4: DocID=228830, Score=0.007812
+Selected by: UNKNOWN
+Users: 'Blessed, Deleted User, Chinmay Gupta'
+Content: Chinmay Gupta: uthwa ke fir college chudwa dunga Chinmay Gupta: transport ka business hai mera Blessed: vacation k bad i'll contact you Chinmay Gupta: ncr me ho kya Chinmay Gupta: dost ka sach me buse...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:17:10,900 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:17:47,880 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:17:48,291 - ================================================================================
+HYBRID SEARCH LOG - Query: 'Satyam Kumar Roy kon hai'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=164912, Distance=0.4686, Users='Dipstick, Avinash yadav bengalan rizzler, nmnsharma007, flacko, Abbie, felish'
+Content: Avinash yadav bengalan rizzler: bhaskar jha can make india next superpower Dipstick: where is Samanyu Roy ❤️ Abbie: Samanyu Roy was allegedly a Bengal...
+
+Vector #2: DocID=100443, Distance=0.4749, Users='Shreyas, Akshat, Deleted User, Abbie'
+Content: Akshat: https://codeforces.com/profile/satyam343 Shreyas: chalo nice Deleted User: Joke tha bmc sir Abbie: bmc son of shekhar? Deleted User: satyam420...
+
+Vector #3: DocID=51324, Distance=0.4823, Users='Deleted User, Avinash yadav bengalan rizzler, tyroWhiz, Abbie'
+Content: Avinash yadav bengalan rizzler: me missing satyam kumar biswajit chatterjee roy tyroWhiz: satyam kumar roy, one of the best cpers tyroWhiz: will be re...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=69986, Users='failure, Deleted User, Abbie, ADMIN'
+Content: failure: sir saw your photo you look chad Deleted User: hello @mesosan orz :prayge: Abbie: Leak Satyam Kumar Roy pics failure: he was at different sit...
+
+BM25 #2: DocID=69987, Users='Deleted User, ADMIN, Stack & tyro & Sid Fan, Papleshwar, Abbie'
+Content: ADMIN: different site Abbie: Leak Satyam Kumar Roy pics Abbie: Leak Satyam Kumar Roy pics Abbie: Leak Satyam Kumar Roy pics Deleted User: https://teno...
+
+BM25 #3: DocID=53003, Users='Deleted User, tyroWhiz, Papleshwar, milind0110, Abbie, malevolent dictator'
+Content: milind0110: Rangeeli happy with gold but rr sir is diamond Abbie: Tag Satyam Kumar Roy, no kidding Deleted User: RR sir ki kismat mein HFT likha hai P...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=51324, Score=0.011801
+Selected by: VECTOR ONLY
+Users: 'Deleted User, Avinash yadav bengalan rizzler, tyroWhiz, Abbie'
+Content: Avinash yadav bengalan rizzler: me missing satyam kumar biswajit chatterjee roy tyroWhiz: satyam kumar roy, one of the best cpers tyroWhiz: will be remembered Deleted User: IITian ho 6ft height hai fi...
+
+Rank #2: DocID=51323, Score=0.011561
+Selected by: UNKNOWN
+Users: 'Deleted User, Avinash yadav bengalan rizzler, tyroWhiz, Abbie'
+Content: Abbie: And RR Deleted User: aap Riya nahi the ? tyroWhiz: and Riya R Abbie: Mai Riya tha? Avinash yadav bengalan rizzler: me missing satyam kumar biswajit chatterjee roy tyroWhiz: satyam kumar roy, on...
+
+Rank #3: DocID=100439, Score=0.011174
+Selected by: UNKNOWN
+Users: 'Deleted User, Papleshwar, Abbie, Shreyas'
+Content: Abbie: when is bmc Papleshwar: Barca gya tho katti Deleted User: I would not tolerate ashleel words for our dear ip address sir Abbie: Mbappe is Satyam Kumar Roy alt Shreyas: mbappe sir aap bhi btaiye...
+
+Rank #4: DocID=87492, Score=0.010747
+Selected by: UNKNOWN
+Users: 'Deleted User, Avinash yadav bengalan rizzler, failure, tyroWhiz, Papleshwar, Abbie'
+Content: Papleshwar: Hai tho satyam Kumar roy Avinash yadav bengalan rizzler: tabse satyam kumar roy hai Deleted User: Hai nw @Stack & tyro & Sid Fan Avinash yadav bengalan rizzler: bc pe Abbie: Show one messa...
+
+📊 SELECTION STATISTICS:
+Vector Only: 1/4 (25.0%)
+BM25 Only: 0/4 (0.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:17:50,538 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:19:08,005 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:19:08,561 - ================================================================================
+HYBRID SEARCH LOG - Query: 'Abbie ko kaunsi ladki pasand hai'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=213004, Distance=0.3408, Users='Deleted User, Abbie'
+Content: Abbie: Ladka ya to hot hona chahiye ya ameer ya government job Abbie: Ameer to hoga Abbie: IITian hai Abbie: future rich Deleted User: Igtu Wale ka li...
+
+Vector #2: DocID=13574, Distance=0.3482, Users='Dhaval Ahir, Abbie, Similie'
+Content: Abbie: Supply kar rahe hai Similie: Bhej rhe? Abbie: Truck mein Dhaval Ahir: Are bhai.. Similie: Bad mouth lucti.. Abbie: UP mein bhi to easy hai GF m...
+
+Vector #3: DocID=142409, Distance=0.3543, Users='flacko, Madao, Abbie'
+Content: Abbie: jaise aap ladki doondhne ja rahe waise koi ladki bhi aayi hogi ladka doondhne Abbie: hard to trust Delhi Boys flacko: jo ladki pasand aati h us...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=142409, Users='flacko, Madao, Abbie'
+Content: Abbie: jaise aap ladki doondhne ja rahe waise koi ladki bhi aayi hogi ladka doondhne Abbie: hard to trust Delhi Boys flacko: jo ladki pasand aati h us...
+
+BM25 #2: DocID=189873, Users='Whoami, Abbie'
+Content: Abbie: mai jo bhi karta wo dusro se poochhta Abbie: that's why didn't ask about sex Whoami: car chalani aati hai? Abbie: nahi, scooty Whoami: driving ...
+
+BM25 #3: DocID=333619, Users='nmnsharma007, Abbie'
+Content: Abbie: most people don't know what they do right it just happens nmnsharma007: kuchh baat hai usme nmnsharma007: whi lagta :sadge: Abbie: copying does...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=142409, Score=0.013321
+Selected by: HYBRID (Vector + BM25)
+Users: 'flacko, Madao, Abbie'
+Content: Abbie: jaise aap ladki doondhne ja rahe waise koi ladki bhi aayi hogi ladka doondhne Abbie: hard to trust Delhi Boys flacko: jo ladki pasand aati h uska already bf hota h flacko: https://cdn.discordap...
+
+Rank #2: DocID=189873, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Whoami, Abbie'
+Content: Abbie: mai jo bhi karta wo dusro se poochhta Abbie: that's why didn't ask about sex Whoami: car chalani aati hai? Abbie: nahi, scooty Whoami: driving school join karungi Whoami: for car Abbie: kaunsi ...
+
+Rank #3: DocID=333619, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'nmnsharma007, Abbie'
+Content: Abbie: most people don't know what they do right it just happens nmnsharma007: kuchh baat hai usme nmnsharma007: whi lagta :sadge: Abbie: copying doesn't help nmnsharma007: isliye i stopped asking aft...
+
+Rank #4: DocID=189874, Score=0.007812
+Selected by: UNKNOWN
+Users: 'Whoami, Abbie'
+Content: Whoami: driving school join karungi Whoami: for car Abbie: kaunsi car pasand hai Abbie: small dreams Abbie: would you have taken college in another state Whoami: yes I was getting msrit cs Whoami: but...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 1/4 (25.0%)
+================================================================================
+
+2025-08-31 03:19:10,613 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:19:19,932 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:19:20,216 - ================================================================================
+HYBRID SEARCH LOG - Query: 'Bandit kon hai'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=10013, Distance=0.5272, Users='DarkKnight, Haunted Knight, Homelander'
+Content: Haunted Knight: abhi ganda down hai aur mostly log bol raha sayad wapas nah par kare peak Homelander: crypto is only for rich people :sadge: Homelande...
+
+Vector #2: DocID=10017, Distance=0.5532, Users='ThoughtCrime, Haunted Knight, Homelander'
+Content: Haunted Knight: waise abhi achanak se duniya bhaar ka government kyu gir raha :psweatduck: India, UK Homelander: waise sarkaar girne ki baat mat karo ...
+
+Vector #3: DocID=8102, Distance=0.5621, Users='Deleted User, KingRayuga, Haunted Knight, Abbie, Sheikh Gopudin, Dronacharya, Utkarsh'
+Content: Utkarsh: itni mehnat :holyf: Dronacharya: Cat bigger than cmc and naman Haunted Knight: saar ap toh orz Sheikh Gopudin: 😂why in cp we dont have girls ...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=21422, Users='Deleted User, Avinash yadav bengalan rizzler, Babruvahan, milind0110, malevolent dictator'
+Content: malevolent dictator: Crush became bandit? Avinash yadav bengalan rizzler: ayush gangwani next Deleted User: are to fucking chill (reply to rr) milind0...
+
+BM25 #2: DocID=21421, Users='Deleted User, Avinash yadav bengalan rizzler, milind0110, Abbie, malevolent dictator'
+Content: Avinash yadav bengalan rizzler: waise kitne log gye hai graviton from iit bhu :pikathink: Deleted User: utkarsh gupta only Deleted User: one other got...
+
+BM25 #3: DocID=311301, Users='Dipstick, jashan, popsicles, Gulab Jamun (sada hua  )'
+Content: jashan: ayaan mandal ko toh jaante hi hoge jashan: abhi itna bura nahi hua Dipstick: abhi rabies hua tha inhe Dipstick: bhaiya ghar gye the popsicles:...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=21422, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'Deleted User, Avinash yadav bengalan rizzler, Babruvahan, milind0110, malevolent dictator'
+Content: malevolent dictator: Crush became bandit? Avinash yadav bengalan rizzler: ayush gangwani next Deleted User: are to fucking chill (reply to rr) milind0110: Graviton hires from all iities? Babruvahan: d...
+
+Rank #2: DocID=21421, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Deleted User, Avinash yadav bengalan rizzler, milind0110, Abbie, malevolent dictator'
+Content: Avinash yadav bengalan rizzler: waise kitne log gye hai graviton from iit bhu :pikathink: Deleted User: utkarsh gupta only Deleted User: one other got offer but he rejected for alphagrep Abbie: Scaler...
+
+Rank #3: DocID=311301, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'Dipstick, jashan, popsicles, Gulab Jamun (sada hua  )'
+Content: jashan: ayaan mandal ko toh jaante hi hoge jashan: abhi itna bura nahi hua Dipstick: abhi rabies hua tha inhe Dipstick: bhaiya ghar gye the popsicles: class mein nhi janta ke kon kon hai Gulab Jamun (...
+
+Rank #4: DocID=311302, Score=0.007812
+Selected by: UNKNOWN
+Users: 'jashan, Dipstick, popsicles, Gulab Jamun (sada hua  )'
+Content: popsicles: class mein nhi janta ke kon kon hai Gulab Jamun (sada hua  ): Yeh toh mai bhi nahi jaanta par log mujhe jaante hai jashan: ye toh mai shi me nahi janta ki kon kon hai jashan: class me jasha...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:19:22,322 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:32:20,581 - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "E:\cmcbot2\discord_bot.py", line 106, in process_message_queue
+    await channel.send(response)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "E:\cmcbot2\discord_bot.py", line 84, in on_message
+    await self.process_message_queue()
+  File "E:\cmcbot2\discord_bot.py", line 110, in process_message_queue
+    await channel.send(error_msg)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+2025-08-31 03:37:45,167 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:37:45,314 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:37:47,719 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:37:51,807 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:37:53,215 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:37:55,778 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:38:17,435 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:38:17,599 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:38:18,443 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:38:22,582 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:38:24,016 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:38:24,471 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: UNKNOWN
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: UNKNOWN
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: UNKNOWN
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: UNKNOWN
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 0/4 (0.0%)
+================================================================================
+
+2025-08-31 03:38:27,090 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:39:45,444 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:39:45,595 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:39:46,567 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:39:50,964 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:39:52,373 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:39:52,825 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3806, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+================================================================================
+
+2025-08-31 03:39:54,619 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"

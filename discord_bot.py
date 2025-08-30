@@ -3,6 +3,8 @@ import asyncio
 from queue import Queue
 import os
 from pathlib import Path
+from collections import defaultdict
+import time
 
 # Load environment variables
 def load_env():
@@ -25,12 +27,17 @@ class HinglishDiscordBot(discord.Client):
         self.message_queue = Queue()
         self.processing = False
 
+        # SLOWMODE SETTINGS
+        self.user_cooldowns = defaultdict(float)
+        self.cooldown_duration = 30  # 30 seconds cooldown
+        self.admin_users = set()
+
     async def on_ready(self):
         print(f'📱 CMC Lore Bot logged in as {self.user}')
         print(f'🎯 Connected to {len(self.guilds)} servers')
         print('💬 Interactive Mode!')
-        print("📋 Commands: '/lore stats', '/lore doc <doc_id>', '/lore lookup <doc_id>', '/lore reset'")
-        print("🤔 Questions: '/lore who is theabbie?', '/lore competitive programming discuss hua?'")
+        print("📋 Commands: '.lore stats', '.lore doc <doc_id>', '.lore lookup <doc_id>', '.lore reset'")
+        print("🤔 Questions: '.lore who is theabbie?', '.lore competitive programming discuss hua?'")
         print('📝 Logs are available in hybrid_search.log')
         print('=' * 60)
 
@@ -41,15 +48,32 @@ class HinglishDiscordBot(discord.Client):
 
         content = message.content.strip()
         
-        # ONLY respond to messages starting with '/lore'
-        if not content.lower().startswith('/lore'):
+        # ONLY respond to messages starting with '.lore'
+        if not content.lower().startswith('.lore'):
             return  # Ignore all other messages
         
+        # CHECK SLOWMODE (Skip for admins)
+        user_id = message.author.id
+        if user_id not in self.admin_users:  # Admins bypass cooldown
+            current_time = time.time()
+            last_command_time = self.user_cooldowns[user_id]
+            
+            if current_time - last_command_time < self.cooldown_duration:
+                remaining_time = self.cooldown_duration - (current_time - last_command_time)
+                await message.add_reaction('🕒')  # Add clock reaction
+                await message.channel.send(
+                    f"🕒 **Slowmode Active!** {message.author.mention}, please wait **{remaining_time:.1f} seconds** before using `/lore` again."
+                )
+                return
+            
+            # Update user's cooldown
+            self.user_cooldowns[user_id] = current_time
+
         # Extract the command/query after '/lore'
-        query = content[5:].strip()  # Remove '/lore' and leading spaces
+        query = content[5:].strip()  # Remove '.lore' and leading spaces
         
         if not query:
-            await message.channel.send("⚠️ **Please provide a command or question after '/lore'**\n\n**Examples:**\n• `/lore stats` - Show bot statistics\n• `/lore who is theabbie?` - Ask questions\n• `/lore doc 12345` - Get document content\n• `/lore lookup 67890` - Lookup document details\n• `/lore reset` - Reset bot data")
+            await message.channel.send("⚠️ **Please provide a command or question after '.lore'**\n\n**Examples:**\n• `.lore stats` - Show bot statistics\n• `.lore who is theabbie?` - Ask questions\n• `.lore doc 12345` - Get document content\n• `.lore lookup 67890` - Lookup document details\n• `.lore reset` - Reset bot data")
             return
         
         # Add to queue with the extracted query
@@ -60,13 +84,13 @@ class HinglishDiscordBot(discord.Client):
             await self.process_message_queue()
 
     async def process_message_queue(self):
-        """Process messages sequentially - NO PARALLEL PROCESSING"""
+        """Process messages sequentially"""
         self.processing = True
         
         while not self.message_queue.empty():
             channel, content, author = self.message_queue.get()
             
-            print(f'🗣️  {author.name}: /lore {content}')
+            print(f'🗣️  {author.name}: .lore {content}')
             
             try:
                 response = await self.handle_user_command(content)
@@ -107,26 +131,26 @@ class HinglishDiscordBot(discord.Client):
             return '👋 **Goodbye!** CMC Lore Bot is shutting down...'
             
         elif cmd == 'help':
-            help_text = """🤖 **CMC Lore Bot - Command Guide:**
+            help_text = """ **CMC Lore Bot - Command Guide:**
 
 **📋 Utility Commands:**
-• `/lore stats` - Show bot statistics and data info
-• `/lore reset` - Reset and reprocess all data
-• `/lore help` - Show this help message
+• `.lore stats` - Show bot statistics and data info
+• `.lore reset` - Reset and reprocess all data
+• `.lore help` - Show this help message
 
 **🔍 Document Commands:**
-• `/lore doc <doc_id>` - Get document content by ID
-• `/lore lookup <doc_id>` - Get detailed document info by ID
+• `.lore doc <doc_id>` - Get document content by ID
+• `.lore lookup <doc_id>` - Get detailed document info by ID
 
 **💬 Ask Questions:**
-• `/lore who is theabbie?` - Ask about community members
-• `/lore competitive programming discuss hua?` - Ask about topics
-• `/lore job career advice mili?` - Ask about any discussions
+• `.lore who is theabbie?` - Ask about community members
+• `.lore competitive programming discuss hua?` - Ask about topics
+• `.lore job career advice mili?` - Ask about any discussions
 
 **Examples from your server:**
-• `/lore theabbie kon hai?`
-• `/lore CMC server mein kaun active hai?`
-• `/lore priyansh ke baare mein kya baat hui?`"""
+• `.lore theabbie kon hai?`
+• `.lore CMC server mein kaun active hai?`
+• `.lore priyansh ke baare mein kya baat hui?`"""
             return help_text
             
         elif cmd.startswith('lookup '):
@@ -135,7 +159,7 @@ class HinglishDiscordBot(discord.Client):
                 result = self.bot_logic.lookup_document(doc_id)
                 return result if result else f'❌ Document ID {doc_id} not found!'
             except (ValueError, IndexError):
-                return '❌ **Invalid command!**\nUsage: `/lore lookup <doc_id>`\nExample: `/lore lookup 12345`'
+                return '❌ **Invalid command!**\nUsage: `.lore lookup <doc_id>`\nExample: `.lore lookup 12345`'
                 
         elif cmd.startswith('doc '):
             try:
@@ -146,7 +170,7 @@ class HinglishDiscordBot(discord.Client):
                 else:
                     return f'❌ Document ID {doc_id} not found!'
             except (ValueError, IndexError):
-                return '❌ **Invalid command!**\nUsage: `/lore doc <doc_id>`\nExample: `/lore doc 12345`'
+                return '❌ **Invalid command!**\nUsage: `.lore doc <doc_id>`\nExample: `.lore doc 12345`'
                 
         else:
             # Treat as question/query about CMC server lore
@@ -154,7 +178,7 @@ class HinglishDiscordBot(discord.Client):
             response = self.bot_logic.ask_question(content)
             
             # Add lore context to response
-            lore_response = f"🧠 **CMC Server Lore Response:**\n\n{response}"
+            lore_response = f"{response}"
             return lore_response
 
     async def close(self):
