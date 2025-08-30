@@ -3321,3 +3321,164 @@ BM25 Only: 2/4 (50.0%)
 ================================================================================
 
 2025-08-31 03:39:54,619 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:41:50,764 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:41:50,910 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:41:52,644 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:42:14,439 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:42:15,887 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:42:16,181 - ================================================================================
+HYBRID SEARCH LOG - Query: 'Bandit kon hai?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=106625, Distance=0.5550, Users='malevolent dictator, kenKaneki, Abbie'
+Content: malevolent dictator: gaot show kenKaneki: arr bhai uske actions malevolent dictator: kick kick malevolent dictator: kick buttowoski malevolent dictato...
+
+Vector #2: DocID=51405, Distance=0.5741, Users='malevolent dictator, Avinash yadav bengalan rizzler, Sarvesh Khodwe, formerly Prasham, Abbie'
+Content: malevolent dictator: low paying hft = probably not as good Abbie: BharatX HFT ka interview diye hi nahi no respect for India malevolent dictator: rubr...
+
+Vector #3: DocID=110118, Distance=0.5742, Users='Avinash yadav bengalan rizzler, sama, malevolent dictator, Random Anon, Akshat'
+Content: sama: axa phir 18k ka rr kyu kr rhe Akshat: jo bola wo past tha, 18k present hai sama: :holyf: :noo: Avinash yadav bengalan rizzler: why left police ....
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=21422, Users='Deleted User, Avinash yadav bengalan rizzler, Babruvahan, milind0110, malevolent dictator'
+Content: malevolent dictator: Crush became bandit? Avinash yadav bengalan rizzler: ayush gangwani next Deleted User: are to fucking chill (reply to rr) milind0...
+
+BM25 #2: DocID=21421, Users='Deleted User, Avinash yadav bengalan rizzler, milind0110, Abbie, malevolent dictator'
+Content: Avinash yadav bengalan rizzler: waise kitne log gye hai graviton from iit bhu :pikathink: Deleted User: utkarsh gupta only Deleted User: one other got...
+
+BM25 #3: DocID=311301, Users='Dipstick, jashan, popsicles, Gulab Jamun (sada hua  )'
+Content: jashan: ayaan mandal ko toh jaante hi hoge jashan: abhi itna bura nahi hua Dipstick: abhi rabies hua tha inhe Dipstick: bhaiya ghar gye the popsicles:...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=21422, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'Deleted User, Avinash yadav bengalan rizzler, Babruvahan, milind0110, malevolent dictator'
+Content: malevolent dictator: Crush became bandit? Avinash yadav bengalan rizzler: ayush gangwani next Deleted User: are to fucking chill (reply to rr) milind0110: Graviton hires from all iities? Babruvahan: d...
+
+Rank #2: DocID=21421, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Deleted User, Avinash yadav bengalan rizzler, milind0110, Abbie, malevolent dictator'
+Content: Avinash yadav bengalan rizzler: waise kitne log gye hai graviton from iit bhu :pikathink: Deleted User: utkarsh gupta only Deleted User: one other got offer but he rejected for alphagrep Abbie: Scaler...
+
+Rank #3: DocID=311301, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'Dipstick, jashan, popsicles, Gulab Jamun (sada hua  )'
+Content: jashan: ayaan mandal ko toh jaante hi hoge jashan: abhi itna bura nahi hua Dipstick: abhi rabies hua tha inhe Dipstick: bhaiya ghar gye the popsicles: class mein nhi janta ke kon kon hai Gulab Jamun (...
+
+Rank #4: DocID=311302, Score=0.007812
+Selected by: UNKNOWN
+Users: 'jashan, Dipstick, popsicles, Gulab Jamun (sada hua  )'
+Content: popsicles: class mein nhi janta ke kon kon hai Gulab Jamun (sada hua  ): Yeh toh mai bhi nahi jaanta par log mujhe jaante hai jashan: ye toh mai shi me nahi janta ki kon kon hai jashan: class me jasha...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+================================================================================
+
+2025-08-31 03:42:18,071 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:47:17,159 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:47:17,302 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:47:18,394 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:47:26,582 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:47:27,996 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:47:28,287 - ================================================================================
+HYBRID SEARCH LOG - Query: 'Bandit kon hai?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=106625, Distance=0.5550, Users='malevolent dictator, kenKaneki, Abbie'
+Content: malevolent dictator: gaot show kenKaneki: arr bhai uske actions malevolent dictator: kick kick malevolent dictator: kick buttowoski malevolent dictato...
+
+Vector #2: DocID=51405, Distance=0.5741, Users='malevolent dictator, Avinash yadav bengalan rizzler, Sarvesh Khodwe, formerly Prasham, Abbie'
+Content: malevolent dictator: low paying hft = probably not as good Abbie: BharatX HFT ka interview diye hi nahi no respect for India malevolent dictator: rubr...
+
+Vector #3: DocID=110118, Distance=0.5742, Users='Avinash yadav bengalan rizzler, sama, malevolent dictator, Random Anon, Akshat'
+Content: sama: axa phir 18k ka rr kyu kr rhe Akshat: jo bola wo past tha, 18k present hai sama: :holyf: :noo: Avinash yadav bengalan rizzler: why left police ....
+
+Vector #4: DocID=46364, Distance=0.5762, Users='malevolent dictator, Avinash yadav bengalan rizzler, Abbie'
+Content: malevolent dictator: and idh energy to stalk anyone Abbie: baccha samajh ke bhi baat nahi karti? Avinash yadav bengalan rizzler: wow yeh toh expect hi...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=21422, Users='Deleted User, Avinash yadav bengalan rizzler, Babruvahan, milind0110, malevolent dictator'
+Content: malevolent dictator: Crush became bandit? Avinash yadav bengalan rizzler: ayush gangwani next Deleted User: are to fucking chill (reply to rr) milind0...
+
+BM25 #2: DocID=21421, Users='Deleted User, Avinash yadav bengalan rizzler, milind0110, Abbie, malevolent dictator'
+Content: Avinash yadav bengalan rizzler: waise kitne log gye hai graviton from iit bhu :pikathink: Deleted User: utkarsh gupta only Deleted User: one other got...
+
+BM25 #3: DocID=311301, Users='Dipstick, jashan, popsicles, Gulab Jamun (sada hua  )'
+Content: jashan: ayaan mandal ko toh jaante hi hoge jashan: abhi itna bura nahi hua Dipstick: abhi rabies hua tha inhe Dipstick: bhaiya ghar gye the popsicles:...
+
+BM25 #4: DocID=311302, Users='jashan, Dipstick, popsicles, Gulab Jamun (sada hua  )'
+Content: popsicles: class mein nhi janta ke kon kon hai Gulab Jamun (sada hua  ): Yeh toh mai bhi nahi jaanta par log mujhe jaante hai jashan: ye toh mai shi m...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=21422, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'Deleted User, Avinash yadav bengalan rizzler, Babruvahan, milind0110, malevolent dictator'
+Content: malevolent dictator: Crush became bandit? Avinash yadav bengalan rizzler: ayush gangwani next Deleted User: are to fucking chill (reply to rr) milind0110: Graviton hires from all iities? Babruvahan: d...
+
+Rank #2: DocID=21421, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Deleted User, Avinash yadav bengalan rizzler, milind0110, Abbie, malevolent dictator'
+Content: Avinash yadav bengalan rizzler: waise kitne log gye hai graviton from iit bhu :pikathink: Deleted User: utkarsh gupta only Deleted User: one other got offer but he rejected for alphagrep Abbie: Scaler...
+
+Rank #3: DocID=311301, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'Dipstick, jashan, popsicles, Gulab Jamun (sada hua  )'
+Content: jashan: ayaan mandal ko toh jaante hi hoge jashan: abhi itna bura nahi hua Dipstick: abhi rabies hua tha inhe Dipstick: bhaiya ghar gye the popsicles: class mein nhi janta ke kon kon hai Gulab Jamun (...
+
+Rank #4: DocID=311302, Score=0.007812
+Selected by: BM25 ONLY
+Users: 'jashan, Dipstick, popsicles, Gulab Jamun (sada hua  )'
+Content: popsicles: class mein nhi janta ke kon kon hai Gulab Jamun (sada hua  ): Yeh toh mai bhi nahi jaanta par log mujhe jaante hai jashan: ye toh mai shi me nahi janta ki kon kon hai jashan: class me jasha...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 4/4 (100.0%)
+================================================================================
+
+2025-08-31 03:47:30,231 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:49:34,054 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:49:34,200 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:49:34,474 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 03:49:42,090 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 03:49:43,487 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 03:49:43,772 - ================================================================================
+HYBRID SEARCH LOG - Query: 'Bandit kon hai?'
+================================================================================
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=21422, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'Deleted User, Avinash yadav bengalan rizzler, Babruvahan, milind0110, malevolent dictator'
+Content: malevolent dictator: Crush became bandit? Avinash yadav bengalan rizzler: ayush gangwani next Deleted User: are to fucking chill (reply to rr) milind0110: Graviton hires from all iities? Babruvahan: d...
+
+Rank #2: DocID=21421, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Deleted User, Avinash yadav bengalan rizzler, milind0110, Abbie, malevolent dictator'
+Content: Avinash yadav bengalan rizzler: waise kitne log gye hai graviton from iit bhu :pikathink: Deleted User: utkarsh gupta only Deleted User: one other got offer but he rejected for alphagrep Abbie: Scaler...
+
+Rank #3: DocID=311301, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'Dipstick, jashan, popsicles, Gulab Jamun (sada hua  )'
+Content: jashan: ayaan mandal ko toh jaante hi hoge jashan: abhi itna bura nahi hua Dipstick: abhi rabies hua tha inhe Dipstick: bhaiya ghar gye the popsicles: class mein nhi janta ke kon kon hai Gulab Jamun (...
+
+Rank #4: DocID=311302, Score=0.007812
+Selected by: BM25 ONLY
+Users: 'jashan, Dipstick, popsicles, Gulab Jamun (sada hua  )'
+Content: popsicles: class mein nhi janta ke kon kon hai Gulab Jamun (sada hua  ): Yeh toh mai bhi nahi jaanta par log mujhe jaante hai jashan: ye toh mai shi me nahi janta ki kon kon hai jashan: class me jasha...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 4/4 (100.0%)
+================================================================================
+
+2025-08-31 03:49:45,859 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"

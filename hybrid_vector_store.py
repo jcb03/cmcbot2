@@ -345,48 +345,17 @@ class HybridVectorStore:
             log_lines.append("=" * 80)
             log_lines.append(f"HYBRID SEARCH LOG - Query: '{query}'")
             log_lines.append("=" * 80)
-        
-            # Log top 3 vector search candidates
-            log_lines.append("\n🔍 TOP 3 VECTOR SEARCH CANDIDATES:")
-            for i in range(min(3, len(vector_results['documents'][0]))):
-                doc = vector_results['documents'][0][i]
-                distance = vector_results['distances'][0][i]
-                metadata = vector_results['metadatas'][0][i]
-                doc_idx = int(metadata.get('doc_idx', -1))
-                users = metadata.get('users', 'unknown')
-            
-                # Clean text for logging
-                clean_text = doc.replace('\n', ' ').replace('\r', '').strip()[:150]
-            
-                log_lines.append(f"Vector #{i+1}: DocID={doc_idx}, Distance={distance:.4f}, Users='{users}'")
-                log_lines.append(f"Content: {clean_text}...")
-                log_lines.append("")
-        
-            # Log top 3 BM25 search candidates
-            log_lines.append("\n📝 TOP 3 BM25 SEARCH CANDIDATES:")
-            for i, doc_idx in enumerate(bm25_indices[:3]):
-                if doc_idx < len(self.documents):
-                    doc = self.documents[doc_idx]
-                    metadata = self.doc_metadata[doc_idx]
-                    users = metadata.get('users', 'unknown')
-                
-                    # Clean text for logging
-                    clean_text = doc.replace('\n', ' ').replace('\r', '').strip()[:150]
-                
-                    log_lines.append(f"BM25 #{i+1}: DocID={doc_idx}, Users='{users}'")
-                    log_lines.append(f"Content: {clean_text}...")
-                    log_lines.append("")
-        
-            # FIXED: Create sets for proper classification
+
+            # Create sets for proper classification
             # Only consider top 20 candidates from each method
             vector_top_ids = set()
-            for metadata in vector_results['metadatas'][0][:3]:
+            for metadata in vector_results['metadatas'][0][:4]:
                 try:
                     vector_top_ids.add(int(metadata.get('doc_idx', -1)))
                 except:
                     pass
         
-            bm25_top_ids = set(bm25_indices[:3])
+            bm25_top_ids = set(bm25_indices[:4])
         
             # Log final selected chunks with CORRECT classification
             log_lines.append(f"\n🎯 FINAL SELECTED CHUNKS (Top {n_results}):")
