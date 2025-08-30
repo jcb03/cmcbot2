@@ -755,3 +755,64 @@ Hybrid (Both): 0/4 (0.0%)
 2025-08-31 00:02:03,733 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
 2025-08-31 00:02:03,883 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
 2025-08-31 00:02:04,666 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 00:46:05,525 - PyNaCl is not installed, voice will NOT be supported
+2025-08-31 00:48:55,419 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 00:48:55,709 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 00:49:00,722 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 00:49:18,236 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 00:49:19,738 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 00:49:20,173 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is Sana Hindu or Muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3462, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3514, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3759, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013172
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=218738, Score=0.012745
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #3: DocID=82385, Score=0.012694
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #4: DocID=81392, Score=0.012529
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chance Sana: im hindu Sana: mousana bera Sana: bera is...
+
+📊 SELECTION STATISTICS:
+Vector Only: 3/4 (75.0%)
+BM25 Only: 1/4 (25.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 00:49:22,010 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"

@@ -6,3 +6,4 @@ numpy
 rank-bm25
 openai 
 python-dotenv
+discord

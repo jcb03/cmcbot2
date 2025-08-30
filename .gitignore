@@ -12,3 +12,4 @@ channel_export.json
 openai_hybrid_chat_db/
 bm25_index.pkl
 .env
+hybrid_search.log
