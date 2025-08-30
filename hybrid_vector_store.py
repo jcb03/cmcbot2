@@ -6,7 +6,17 @@ import numpy as np
 import pickle
 import os
 import glob
+import logging
 from pathlib import Path
+from datetime import datetime
+
+# Configure logging
+logging.basicConfig(
+    filename='hybrid_search.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(message)s',
+    encoding='utf-8'
+)
 
 # Load environment variables
 def load_env():
@@ -328,8 +338,113 @@ class HybridVectorStore:
         tokens = re.findall(r'\b\w+\b', text)
         return [t for t in tokens if len(t) >= 2]
     
+    def log_selection_info(self, query, vector_results, bm25_indices, final_ranking, n_results):
+        """FIXED: Accurate classification of selection sources"""
+        try:
+            log_lines = []
+            log_lines.append("=" * 80)
+            log_lines.append(f"HYBRID SEARCH LOG - Query: '{query}'")
+            log_lines.append("=" * 80)
+        
+            # Log top 3 vector search candidates
+            log_lines.append("\n🔍 TOP 3 VECTOR SEARCH CANDIDATES:")
+            for i in range(min(3, len(vector_results['documents'][0]))):
+                doc = vector_results['documents'][0][i]
+                distance = vector_results['distances'][0][i]
+                metadata = vector_results['metadatas'][0][i]
+                doc_idx = int(metadata.get('doc_idx', -1))
+                users = metadata.get('users', 'unknown')
+            
+                # Clean text for logging
+                clean_text = doc.replace('\n', ' ').replace('\r', '').strip()[:150]
+            
+                log_lines.append(f"Vector #{i+1}: DocID={doc_idx}, Distance={distance:.4f}, Users='{users}'")
+                log_lines.append(f"Content: {clean_text}...")
+                log_lines.append("")
+        
+            # Log top 3 BM25 search candidates
+            log_lines.append("\n📝 TOP 3 BM25 SEARCH CANDIDATES:")
+            for i, doc_idx in enumerate(bm25_indices[:3]):
+                if doc_idx < len(self.documents):
+                    doc = self.documents[doc_idx]
+                    metadata = self.doc_metadata[doc_idx]
+                    users = metadata.get('users', 'unknown')
+                
+                    # Clean text for logging
+                    clean_text = doc.replace('\n', ' ').replace('\r', '').strip()[:150]
+                
+                    log_lines.append(f"BM25 #{i+1}: DocID={doc_idx}, Users='{users}'")
+                    log_lines.append(f"Content: {clean_text}...")
+                    log_lines.append("")
+        
+            # FIXED: Create sets for proper classification
+            # Only consider top 20 candidates from each method
+            vector_top_ids = set()
+            for metadata in vector_results['metadatas'][0][:3]:
+                try:
+                    vector_top_ids.add(int(metadata.get('doc_idx', -1)))
+                except:
+                    pass
+        
+            bm25_top_ids = set(bm25_indices[:3])
+        
+            # Log final selected chunks with CORRECT classification
+            log_lines.append(f"\n🎯 FINAL SELECTED CHUNKS (Top {n_results}):")
+        
+            vector_selected = 0
+            bm25_selected = 0
+            hybrid_selected = 0
+        
+            for rank, (doc_idx, score) in enumerate(final_ranking[:n_results]):
+                if doc_idx < len(self.documents):
+                    doc = self.documents[doc_idx]
+                    metadata = self.doc_metadata[doc_idx]
+                    users = metadata.get('users', 'unknown')
+                
+                    # FIXED: Proper classification logic
+                    in_vector_top = doc_idx in vector_top_ids
+                    in_bm25_top = doc_idx in bm25_top_ids
+                
+                    if in_vector_top and in_bm25_top:
+                        source_type = "HYBRID (Vector + BM25)"
+                        hybrid_selected += 1
+                    elif in_vector_top and not in_bm25_top:
+                        source_type = "VECTOR ONLY"
+                        vector_selected += 1
+                    elif in_bm25_top and not in_vector_top:
+                        source_type = "BM25 ONLY"
+                        bm25_selected += 1
+                    else:
+                        source_type = "UNKNOWN"
+                
+                    # Clean text for logging
+                    clean_text = doc.replace('\n', ' ').replace('\r', '').strip()[:200]
+                
+                    log_lines.append(f"\nRank #{rank+1}: DocID={doc_idx}, Score={score:.6f}")
+                    log_lines.append(f"Selected by: {source_type}")
+                    log_lines.append(f"Users: '{users}'")
+                    log_lines.append(f"Content: {clean_text}...")
+        
+            # FIXED: Accurate summary statistics
+            log_lines.append(f"\n📊 SELECTION STATISTICS:")
+            log_lines.append(f"Vector Only: {vector_selected}/{n_results} ({vector_selected/n_results*100:.1f}%)")
+            log_lines.append(f"BM25 Only: {bm25_selected}/{n_results} ({bm25_selected/n_results*100:.1f}%)")
+            log_lines.append(f"Hybrid (Both): {hybrid_selected}/{n_results} ({hybrid_selected/n_results*100:.1f}%)")
+            log_lines.append("=" * 80)
+            log_lines.append("")
+        
+            # Write to log file
+            log_content = '\n'.join(log_lines)
+            logging.info(log_content)
+        
+            print(f"📝 Logged FIXED search details to hybrid_search.log")
+        
+        except Exception as e:
+            print(f"⚠️  Logging error: {e}")
+
+    
     def hybrid_search(self, query, n_results=4):
-        """SIMPLE: Just RRF + BM25 + OpenAI embeddings - NO FILTERING, NO EXPANSION"""
+        """SIMPLE: RRF + BM25 + OpenAI embeddings with DETAILED LOGGING"""
         if not self.bm25:
             if not self.load_existing_indices():
                 return None
@@ -350,7 +465,7 @@ class HybridVectorStore:
             # 3. BM25 search (get top 20 candidates)
             query_tokens = self._tokenize_hinglish(query.lower())
             bm25_scores = self.bm25.get_scores(query_tokens)
-            bm25_top_indices = np.argsort(bm25_scores)[::-1][:20]
+            bm25_top_indices = np.argsort(bm25_scores)[::-1][:20].tolist()
             
             # 4. SIMPLE RRF fusion (50% vector, 50% BM25)
             def rrf_score(rank, k=60):
@@ -373,14 +488,17 @@ class HybridVectorStore:
                 if bm25_scores[doc_idx] > 0:
                     doc_scores[doc_idx] = doc_scores.get(doc_idx, 0) + 0.5 * rrf_score(i)
             
-            # 5. Sort by combined scores and return top N
+            # 5. Sort by combined scores
             final_ranking = sorted(doc_scores.items(), key=lambda x: x[1], reverse=True)
             
             if not final_ranking:
                 print("⚠️  No results found")
                 return None
             
-            # Prepare results (NO EXPANSION - just raw chunks)
+            # 6. LOG DETAILED SELECTION INFO
+            self.log_selection_info(query, vector_results, bm25_top_indices, final_ranking, n_results)
+            
+            # 7. Prepare results (NO EXPANSION - just raw chunks)
             top_docs = []
             top_metadata = []
             top_distances = []
@@ -391,7 +509,7 @@ class HybridVectorStore:
                     top_metadata.append(self.doc_metadata[doc_idx])
                     top_distances.append(1 - score)  # Convert score back to distance
             
-            print(f"🎯 Simple results: {len(top_docs)} chunks")
+            print(f"🎯 Simple results: {len(top_docs)} chunks (logged to hybrid_search.log)")
             
             return {
                 'documents': [top_docs],
@@ -414,6 +532,38 @@ class HybridVectorStore:
         
         return f"💾 ✅ SIMPLE OpenAI Hybrid | Vector: {vector_count:,} | BM25: {bm25_count:,}"
     
+    def get_doc_by_id(self, doc_id):
+        """Get document content by document ID for debugging/inspection"""
+        try:
+            doc_id = int(doc_id)
+            if 0 <= doc_id < len(self.documents):
+                doc = self.documents[doc_id]
+                metadata = self.doc_metadata[doc_id]
+            
+                return {
+                'doc_id': doc_id,
+                'content': doc,
+                'users': metadata.get('users', 'Unknown'),
+                'start_time': metadata.get('start_time', 'Unknown'),
+                'message_count': metadata.get('message_count', 'Unknown'),
+                'chunk_id': metadata.get('chunk_id', 'Unknown')
+                }
+            else:
+                return None
+        except (ValueError, IndexError):
+            return None
+
+    def get_doc_content_only(self, doc_id):
+        """Get just the text content by document ID"""
+        try:
+            doc_id = int(doc_id)
+            if 0 <= doc_id < len(self.documents):
+                return self.documents[doc_id]
+            return None
+        except (ValueError, IndexError):
+            return None
+
+
     def force_reset(self):
         """Reset everything"""
         import shutil

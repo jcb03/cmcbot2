@@ -144,7 +144,7 @@ class SimpleHinglishChatBot:
         if not self.setup_complete:
             return "❌ CMC Lore Bot not ready"
         
-        return f"""📊 CMC Lore Bot Stats:
+        return f"""📊 CMC Lore Bot Stats:        
 
 🔢 Data: {self.total_messages:,} messages processed
 📊 Storage: {self.hybrid_store.get_stats()}
@@ -157,6 +157,33 @@ class SimpleHinglishChatBot:
    • ✅ RRF fusion (50% vector, 50% BM25)
    • ✅ OpenAI embeddings + Llama 3.1 8B
    • ✅ Perfect for Hinglish queries"""
+
+    def lookup_document(self, doc_id):
+        """Lookup document by ID with detailed info"""
+        if not self.setup_complete:
+            return "❌ Bot not ready!"
+    
+        doc_info = self.hybrid_store.get_doc_by_id(doc_id)
+    
+        if doc_info is None:
+            return f"❌ Document ID {doc_id} not found! Valid range: 0-{len(self.hybrid_store.documents)-1}"
+    
+        result = f"""📄 Document ID {doc_info['doc_id']}:
+
+    👥 Users: {doc_info['users']}
+    📅 Time: {doc_info['start_time'][:10]}
+    💬 Messages: {doc_info['message_count']}
+    🔖 Chunk ID: {doc_info['chunk_id']}
+
+    📝 Content:
+    {doc_info['content']}
+    """
+    
+        return result  
+    
+    def get_document_by_id(self, doc_id):
+        """Simple method to get just document text"""
+        return self.hybrid_store.get_doc_content_only(doc_id)
 
 # Main execution
 if __name__ == "__main__":
@@ -174,7 +201,7 @@ if __name__ == "__main__":
     # Interactive mode
     print("\n" + "="*60)
     print("💬 Interactive Mode!")
-    print("Commands: 'stats', 'reset', 'quit'")
+    print("Commands: 'stats', 'reset', 'quit', 'doc <doc_id>', 'lookup <doc_id>'")
     print("="*60)
     
     while True:
@@ -188,6 +215,24 @@ if __name__ == "__main__":
             print("🔄 Restart bot to reprocess data")
         elif user_input.lower() == 'stats':
             print(bot.get_stats())
+        elif user_input.lower().startswith('lookup '):
+            try:
+                doc_id = int(user_input.split(" ", 1)[1].strip())
+                result = bot.lookup_document(doc_id)
+                print(result)
+            except (ValueError, IndexError):
+                print("❌ Usage: lookup <doc_id>")
+                print("Example: lookup 12345")
+        elif user_input.lower().startswith('doc '):
+            try:
+                doc_id = int(user_input.split(" ", 1)[1].strip())
+                content = bot.get_document_by_id(doc_id)
+                if content:
+                    print(f"\n📄 Document {doc_id}:\n{content}")
+                else:
+                    print(f"❌ Document {doc_id} not found!")
+            except (ValueError, IndexError):
+                print("❌ Usage: doc <doc_id>")    
         else:
             response = bot.ask_question(user_input)
             print(f"\n{response}")
