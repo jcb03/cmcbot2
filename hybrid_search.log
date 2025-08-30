@@ -816,3 +816,614 @@ Hybrid (Both): 0/4 (0.0%)
 ================================================================================
 
 2025-08-31 00:49:22,010 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 01:30:40,325 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 01:30:40,494 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 01:30:42,284 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 01:30:46,981 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 01:30:48,429 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 01:30:48,701 - ================================================================================
+HYBRID SEARCH LOG - Query: 'theabbie kon hai?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=92339, Distance=0.3682, Users='Avinash yadav bengalan rizzler, log_hatim, Abbie'
+Content: Avinash yadav bengalan rizzler: !alias search theabbie Abbie: forgot rr, Abbas and Anish De Abbie: Hivon se katti log_hatim: Abbie ap toh mere jaise h...
+
+Vector #2: DocID=85636, Distance=0.3758, Users='Avinash yadav bengalan rizzler, Abbie, ammy11'
+Content: Abbie: rod kaha daalte Abbie: doondh liya Abbie: cmc ka ban ne do Abbie: phir dikhaunga ammy11: https://cdn.discordapp.com/emojis/863326446516830248.g...
+
+Vector #3: DocID=25220, Distance=0.3793, Users='Deleted User, Avinash yadav bengalan rizzler, pablo29'
+Content: Avinash yadav bengalan rizzler: :psweatduck: yeh poora aapak zameen hai Deleted User: fir chaliye shuru karte hai karta Deleted User: yeh dekho pablo2...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=216823, Users='Deleted User, shivang., Abbie, Similie, grandis nates niger vir'
+Content: Abbie: http://jaanu.xyz Deleted User: Most ai ml roles are gone to iitians nitians shivang.: theabbie.xyz Similie: Abbie is taken? Abbie: redirects to...
+
+BM25 #2: DocID=233283, Users='Raghav Goel, tyroWhiz, Papleshwar, wrackedy, flakes'
+Content: Raghav Goel: kon fela rha h aisi afwah tyroWhiz: kisko bol rhe? tyroWhiz: linked in pe toh mera post abhi hai tyroWhiz: matlab photo* wrackedy: selfie...
+
+BM25 #3: DocID=98411, Users='pvtr, Papleshwar, Abbie'
+Content: Papleshwar: !alias delete cyan Abbie: !alias rename AdityaDan paploo Abbie: !alias rename theabbie kdszkfsdjbfsfjhas pvtr: !alias search kdszkfsdjbfsf...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=216823, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'Deleted User, shivang., Abbie, Similie, grandis nates niger vir'
+Content: Abbie: http://jaanu.xyz Deleted User: Most ai ml roles are gone to iitians nitians shivang.: theabbie.xyz Similie: Abbie is taken? Abbie: redirects to LinkedIn grandis nates niger vir: nsut se kon hai...
+
+Rank #2: DocID=233283, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Raghav Goel, tyroWhiz, Papleshwar, wrackedy, flakes'
+Content: Raghav Goel: kon fela rha h aisi afwah tyroWhiz: kisko bol rhe? tyroWhiz: linked in pe toh mera post abhi hai tyroWhiz: matlab photo* wrackedy: selfie with baskin robbins and noogler hat flakes: is gr...
+
+Rank #3: DocID=98411, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'pvtr, Papleshwar, Abbie'
+Content: Papleshwar: !alias delete cyan Abbie: !alias rename AdityaDan paploo Abbie: !alias rename theabbie kdszkfsdjbfsfjhas pvtr: !alias search kdszkfsdjbfsfjhas: Abbie: sad, only renames for 1 person pvtr: ...
+
+Rank #4: DocID=279299, Score=0.007812
+Selected by: UNKNOWN
+Users: 'Avinash yadav bengalan rizzler, flakes, Shinomori, flacko'
+Content: Avinash yadav bengalan rizzler: uske baad free time mile to design patterns Avinash yadav bengalan rizzler: :theabbie: inko wapis le aao flakes: mature but jobless :sadge: flacko: ?av @flakes flacko: ...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 01:30:51,443 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 01:30:52,261 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 01:30:52,679 - ================================================================================
+HYBRID SEARCH LOG - Query: 'bhai competitive programming discuss hua?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=176761, Distance=0.3593, Users='Dipstick, Avinash yadav bengalan rizzler, Garro, sama, Sarvesh Khodwe, formerly Prasham, Akshat'
+Content: Sarvesh Khodwe, formerly Prasham: bro mai abhi 4th year me hu aur maine abhi tak competitive programming start nahi kiya hai bohot regret ho raha hai ...
+
+Vector #2: DocID=889, Distance=0.3942, Users='Gagan Vats, Gin Chan, malevolent dictator, Orz, Buttface'
+Content: malevolent dictator: cp-algorithms, cses handbook se padh sakte ho malevolent dictator: and codeforces for practice Gagan Vats: https://artofproblemso...
+
+Vector #3: DocID=28411, Distance=0.3944, Users='ThoughtCrime, Dhaval Ahir, malevolent dictator'
+Content: Dhaval Ahir: Competitive Programming is Future :hmmmm: ThoughtCrime: ngl he was the first guy I remembered when I joined back ThoughtCrime: :holyf: so...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=4238, Users='ThoughtCrime, Deleted User, codemasterdoujin, Homelander, Buttface'
+Content: codemasterdoujin: Just Indian things Homelander: if we kill off the worst 10% in competitive programming every year Homelander: will people evolve to ...
+
+BM25 #2: DocID=26299, Users='Deleted User, Babruvahan, milind0110, Similie'
+Content: Similie: Nono Karangreat Deleted User: mai to kahta hu india ke har baccho ko competitive programming ani chahiye Deleted User: duck sir are you free ...
+
+BM25 #3: DocID=330867, Users='mesosan, Oppenheimer, Abbie'
+Content: mesosan: Porn site Abbie: upload on telegram and show from there mesosan: regular non illegall porn Oppenheimer: bro I mean competitive programming tu...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=4238, Score=0.008197
+Selected by: BM25 ONLY
+Users: 'ThoughtCrime, Deleted User, codemasterdoujin, Homelander, Buttface'
+Content: codemasterdoujin: Just Indian things Homelander: if we kill off the worst 10% in competitive programming every year Homelander: will people evolve to be better competitive programmers? Homelander: *ag...
+
+Rank #2: DocID=26299, Score=0.008065
+Selected by: BM25 ONLY
+Users: 'Deleted User, Babruvahan, milind0110, Similie'
+Content: Similie: Nono Karangreat Deleted User: mai to kahta hu india ke har baccho ko competitive programming ani chahiye Deleted User: duck sir are you free rn kuch discuss karna tha Babruvahan: karo karo De...
+
+Rank #3: DocID=330867, Score=0.007937
+Selected by: BM25 ONLY
+Users: 'mesosan, Oppenheimer, Abbie'
+Content: mesosan: Porn site Abbie: upload on telegram and show from there mesosan: regular non illegall porn Oppenheimer: bro I mean competitive programming tutorials Abbie: Oppenheimer send your dickpic mesos...
+
+Rank #4: DocID=26298, Score=0.007812
+Selected by: UNKNOWN
+Users: 'Deleted User, Avinash yadav bengalan rizzler, Babruvahan, Similie'
+Content: Deleted User: cp is life Deleted User: wasnt he bhavin turakhia Deleted User: cp is love Avinash yadav bengalan rizzler: he is deepak kalal alt Similie: Nono Karangreat Deleted User: mai to kahta hu i...
+
+📊 SELECTION STATISTICS:
+Vector Only: 0/4 (0.0%)
+BM25 Only: 3/4 (75.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 01:30:55,921 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 01:32:23,789 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 01:32:23,937 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 01:32:24,429 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 01:32:29,053 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 01:32:30,474 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 01:32:30,893 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 01:32:33,453 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 01:33:02,924 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 01:33:03,069 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 01:33:03,788 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 01:33:09,183 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 01:33:10,644 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 01:33:11,074 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3480, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3806, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012721
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 01:33:14,556 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 01:33:32,674 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 01:33:32,825 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 01:33:34,121 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 01:33:38,265 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 01:33:39,705 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 01:33:40,129 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 01:33:43,096 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 01:34:00,795 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 01:34:00,955 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 01:34:01,958 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 01:34:06,746 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 01:34:08,165 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 01:34:08,605 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3806, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 01:34:10,786 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:12:49,448 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:12:49,605 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:12:51,197 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:12:54,700 - PyNaCl is not installed, voice will NOT be supported
+2025-08-31 02:12:54,700 - logging in using static token
+2025-08-31 02:12:56,322 - Shard ID None has connected to Gateway (Session ID: a914b957456dabb4eca0876b0e12ce69).
+2025-08-31 02:14:12,683 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:14:14,170 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:14:14,611 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:14:16,917 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:18:26,922 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:18:27,385 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:18:28,692 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:18:44,123 - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "E:\cmcbot2\discord_bot.py", line 70, in process_message_queue
+    await channel.send(response)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "E:\cmcbot2\discord_bot.py", line 48, in on_message
+    await self.process_message_queue()
+  File "E:\cmcbot2\discord_bot.py", line 74, in process_message_queue
+    await channel.send(error_msg)
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+2025-08-31 02:18:57,464 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:18:57,624 - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:18:57,895 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:19:01,484 - PyNaCl is not installed, voice will NOT be supported
+2025-08-31 02:19:01,484 - logging in using static token
+2025-08-31 02:19:04,290 - Shard ID None has connected to Gateway (Session ID: 484fca229ec4d6b6c07d9894a35e8aa5).
+2025-08-31 02:19:13,116 - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-08-31 02:19:14,664 - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-08-31 02:19:15,140 - ================================================================================
+HYBRID SEARCH LOG - Query: 'is sana hindu or muslim?'
+================================================================================
+
+🔍 TOP 3 VECTOR SEARCH CANDIDATES:
+Vector #1: DocID=103436, Distance=0.3327, Users='Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana w...
+
+Vector #2: DocID=82385, Distance=0.3481, Users='Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: s...
+
+Vector #3: DocID=81392, Distance=0.3805, Users='Sarvesh Khodwe, formerly Prasham, Sana, mrsir'
+Content: Sana: how was movie Sarvesh Khodwe, formerly Prasham: these movies need to be made Sana: to spread islamphobia mrsir: @Sana are you muslim by any chan...
+
+
+📝 TOP 3 BM25 SEARCH CANDIDATES:
+BM25 #1: DocID=82384, Users='Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents ...
+
+BM25 #2: DocID=218738, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got ...
+
+BM25 #3: DocID=218737, Users='allahUAkbar, Sana'
+Content: allahUAkbar: Lol wow whyd you name this Sana: are you talking about my server name? Sana: it's cuz my name sounds muslim but i am actually a hindu San...
+
+
+🎯 FINAL SELECTED CHUNKS (Top 4):
+
+Rank #1: DocID=103436, Score=0.013282
+Selected by: VECTOR ONLY
+Users: 'Sana, tyroWhiz, Ayush, Abbie'
+Content: Sana: sana is hindu tyroWhiz: but not kattar right? tyroWhiz: like paise ke liye toh udhar jaa hi sakti ho tyroWhiz: bas / 4 karke jaana Ayush: sana will convert to muslim for that hot guy tyroWhiz: I...
+
+Rank #2: DocID=82385, Score=0.012720
+Selected by: VECTOR ONLY
+Users: 'Sarvesh Khodwe, formerly Prasham, Sana, tyroWhiz'
+Content: Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic tyroWhiz: bruh agnostic Sana: yea whatever idc about god Sana: so whatever fancy term i find i just go along with ...
+
+Rank #3: DocID=218738, Score=0.012651
+Selected by: BM25 ONLY
+Users: 'allahUAkbar, Sana'
+Content: allahUAkbar: Confused. You are a hindu? Or you being a hindu is a joke? Sana: im a hindu XD Sana: the name is a joke but real tho allahUAkbar: Oh got it allahUAkbar: Sana sounds more like a christian ...
+
+Rank #4: DocID=82384, Score=0.012623
+Selected by: BM25 ONLY
+Users: 'Sana, tyroWhiz, Abbie'
+Content: tyroWhiz: rizz god abbie tyroWhiz: is that sana mam alt? Abbie: she muslim Abbie: Sana I mean Sana: i am not muslim Sana: i am hindu Sana: my parents are hindu Sana: i am agnostic...
+
+📊 SELECTION STATISTICS:
+Vector Only: 2/4 (50.0%)
+BM25 Only: 2/4 (50.0%)
+Hybrid (Both): 0/4 (0.0%)
+================================================================================
+
+2025-08-31 02:19:17,288 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-08-31 02:30:46,104 - Ignoring exception in on_message
+Traceback (most recent call last):
+  File "E:\cmcbot2\discord_bot.py", line 70, in process_message_queue
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "E:\cmcbot2\discord_bot.py", line 48, in on_message
+    # Extract the command/query after '/lore'
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\cmcbot2\discord_bot.py", line 74, in process_message_queue
+    # Split long responses for Discord limits
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\discord\http.py", line 654, in request
+    async with self.__session.request(method, url, **kwargs) as response:
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 1488, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Narender\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiohttp\client.py", line 527, in _request
+    raise RuntimeError("Session is closed")
+RuntimeError: Session is closed
