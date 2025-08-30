@@ -66,6 +66,7 @@ IMPORTANT INSTRUCTIONS:
 6. Keep response focused and under 300 words
 7. If no relevant info found, don't make up answers
 8. Use the retrieval info to improve your answer if provided
+9. When someone mentions the word lore then give answer point wise
 
 Retrieved Conversations:
 {context}
@@ -80,7 +81,7 @@ Response:"""
                 model=self.model_name,
                 messages=[{'role': 'user', 'content': prompt}],
                 options={
-                    'temperature': 0.4,    # Very low for factual accuracy
+                    'temperature': 0.35,    # Very low for factual accuracy
                     'max_tokens': 400,     # Focused responses
                     'top_p': 0.85,         # Controlled sampling
                     'top_k': 20,           # Limited vocabulary
@@ -125,7 +126,7 @@ Write in natural Hinglish style, be precise, under 150 words:"""
                 model=self.model_name,
                 messages=[{'role': 'user', 'content': prompt}],
                 options={
-                    'temperature': 0.4,
+                    'temperature': 0.35,
                     'max_tokens': 250,
                     'top_p': 0.8
                 }

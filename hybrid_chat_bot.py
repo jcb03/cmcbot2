@@ -35,9 +35,9 @@ class SimpleHinglishChatBot:
         print("✅ OpenAI API key detected - using simple hybrid retrieval!")
     
     def setup(self):
-        """Simple setup - no BS"""
-        print("🚀 Setting up SIMPLE Hinglish Discord Chat Bot...")
-        print("🎯 RRF + BM25 + OpenAI Embeddings ONLY!")
+        """Simple setup with hybrid vector store"""
+        print("🚀 Setting up CMC Lore Bot...")
+        print("🎯 RRF + BM25 + OpenAI Embeddings")
         print("=" * 60)
         
         # Check existing setup
@@ -56,9 +56,9 @@ class SimpleHinglishChatBot:
                 self.total_messages = bm25_count * 6
                 
                 print("\n" + "=" * 60)
-                print("🎉 Bot ready - NO REPROCESSING!")
+                print("🎉 CMC Lore Bot ready - NO REPROCESSING REQUIRED!")
                 print(f"{self.hybrid_store.get_stats()}")
-                print("🔍 Retrieval: SIMPLE RRF + BM25 + OpenAI")
+                print("🔍 Retrieval: RRF + BM25 + OpenAI")
                 print("🧠 LLM: Llama 3.1 8B")
                 print("=" * 60)
                 return True
@@ -93,7 +93,7 @@ class SimpleHinglishChatBot:
         self.setup_complete = True
         
         print("\n" + "=" * 60)
-        print("🎉 SIMPLE Chat Bot setup complete!")
+        print("🎉 CMC Lore Bot setup complete!")
         print(f"⏱️  Setup time: {setup_time:.1f} seconds")
         print(f"📊 Processed: {self.total_messages:,} messages")
         print(f"{self.hybrid_store.get_stats()}")
@@ -103,7 +103,7 @@ class SimpleHinglishChatBot:
         return True
     
     def ask_question(self, question):
-        """SIMPLE: Just ask and get answer - NO FILTERING BULLSH*T"""
+        """SIMPLE: Just ask and get answer"""
         if not self.setup_complete:
             return "❌ Setup incomplete! Run setup() first."
         
@@ -117,12 +117,12 @@ class SimpleHinglishChatBot:
         if not results or not results['documents'] or not results['documents'][0]:
             return "🤔 Koi conversation nahi mila bhai! Try different keywords."
         
-        # Extract results - NO FILTERING
+        # Extract results 
         conversation_chunks = results['documents'][0]
         chunk_metadata = results['metadatas'][0]
         distances = results['distances'][0]
         
-        # Generate response - NO BS FILTERING
+        # Generate response 
         print("🧠 Generating AI response...")
         start_llm = time.time()
         
@@ -142,21 +142,20 @@ class SimpleHinglishChatBot:
     def get_stats(self):
         """Simple stats"""
         if not self.setup_complete:
-            return "❌ Bot not ready"
+            return "❌ CMC Lore Bot not ready"
         
-        return f"""📊 **SIMPLE Hinglish Chat Bot Stats:**
+        return f"""📊 CMC Lore Bot Stats:
 
-🔢 **Data:** {self.total_messages:,} messages processed
-📊 **Storage:** {self.hybrid_store.get_stats()}
+🔢 Data: {self.total_messages:,} messages processed
+📊 Storage: {self.hybrid_store.get_stats()}
 
-🔍 **Retrieval:** RRF + BM25 + OpenAI Embeddings ONLY
-🧠 **LLM:** Llama 3.1 8B (Local)
+🔍 Retrieval: RRF + BM25 + OpenAI Embeddings
+🧠 LLM: Llama 3.1 8B (Local)
 
-🎯 **Features:**
-   • ✅ No filtering bullsh*t - returns all results
-   • ✅ No context expansion - just raw chunks  
-   • ✅ Simple RRF fusion (50% vector, 50% BM25)
-   • ✅ OpenAI embeddings for accuracy
+🎯 Features:
+   • ✅ CMC Lore bot can summarize or answer queries related to CMC Discord chats
+   • ✅ RRF fusion (50% vector, 50% BM25)
+   • ✅ OpenAI embeddings + Llama 3.1 8B
    • ✅ Perfect for Hinglish queries"""
 
 # Main execution
@@ -172,28 +171,9 @@ if __name__ == "__main__":
     # Show stats
     print(f"\n{bot.get_stats()}")
     
-    # Test questions
-    test_questions = [
-        "theabbie kon hai?",
-        "bhai competitive programming ke baare mein kya discuss hua?",
-        "CMC server mein kaun active hai?",
-        "priyansh ke baare mein kya baat hui?",
-        "job aur career advice?"
-    ]
-    
-    print("\n" + "="*60)
-    print("🧪 Testing SIMPLE hybrid responses...")
-    print("="*60)
-    
-    for q in test_questions:
-        print(f"\n❓ **Question:** {q}")
-        response = bot.ask_question(q)
-        print(response)
-        print("-" * 40)
-    
     # Interactive mode
     print("\n" + "="*60)
-    print("💬 SIMPLE Interactive Mode!")
+    print("💬 Interactive Mode!")
     print("Commands: 'stats', 'reset', 'quit'")
     print("="*60)
     
@@ -201,7 +181,7 @@ if __name__ == "__main__":
         user_input = input("\n🗣️  You: ").strip()
         
         if user_input.lower() in ['quit', 'exit', 'bye']:
-            print("👋 Bye! Simple chat bot shutting down...")
+            print("👋 Bye! CMC Lore bot shutting down...")
             break
         elif user_input.lower() == 'reset':
             bot.hybrid_store.force_reset()
